@@ -59,17 +59,18 @@ bool is_demand_at_minimum(int T, int C_LO, int D, int ts) {
 
 int find_optimal_tight_D(int T, int C_LO, int previous_tight_D, int ts) {
   for (int n = 0; n <= (ts - 1) / T + 1; ++n) {
-    if (C_LO <= ts - n * T && ts - n * T < previous_tight_D) {
+    if (C_LO <= ts - n * T && ts - n * T < previous_tight_D) { //tightened deadline = ts - n * T
       return ts - n * T;
     }
   }
   return previous_tight_D;
 }
 
+// Enhanced Deadline Search Algorithm
 string deadline_search_algorithm(TaskSet& task_set) {
   if (!is_eligible(task_set)) return "Not eligible for deadline-tightening";
 
-  deque<int> candidates = get_best_candidates(task_set);
+  deque<int> candidates = get_best_candidates(task_set); //EDS orders the tasks by greatest margin of C_HI-C_LO
   int best_candidate = -1;
   auto [t, ts] = get_failure_time(task_set);
 
@@ -108,10 +109,11 @@ string deadline_search_algorithm(TaskSet& task_set) {
   return "No more eligible candidates";
 }
 
+// Naive Algorithm
 string naive_algorithm(TaskSet& task_set) {
   if (!is_eligible(task_set)) return "Not eligible for deadline-tightening";
 
-  deque<int> candidates = get_hi_candidates(task_set);
+  deque<int> candidates = get_hi_candidates(task_set); //Naive selects HI tasks at random
   int best_candidate = -1;
   auto [t, ts] = get_failure_time(task_set);
 

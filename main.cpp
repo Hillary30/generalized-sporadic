@@ -87,6 +87,8 @@ int main(int argc, char* argv[]) {
     duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     assert(end_time >= start_time);
     cum_naive_duration += static_cast<unsigned long long>(duration.count());
+
+    //EDF-VD
   }
 
   result.push_back(static_cast<int>(utilization * 1000));

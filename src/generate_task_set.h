@@ -189,7 +189,7 @@ private:
     return abs(a * b) / gcd(a, b);
   }
 
-  double lcmT_maxD() {
+  double lcmT_maxD() { //Proposition 2: (T = lcm(T)) + max(D)
     int l = 1;
     int maxD = 0;
 
@@ -202,7 +202,7 @@ private:
     return static_cast<double>(l + maxD);
   }
 
-  double U_maxTD() {
+  double U_maxTD() { //Proposition 2: (U / (1 - U)) * max(T - D)
     double maxTD = 0;
 
     for(auto const&[key, task]: task_set) { // Calculate the maximum T - D value
@@ -210,7 +210,7 @@ private:
       if (currentTD > maxTD) maxTD = currentTD; 
     }
 
-    return floor(utilization / (1 - utilization) * maxTD);
+    return floor(utilization / (1 - utilization) * maxTD); //U / (1 - U)
   }
 
   string thm_to_string(bool thm_result) {

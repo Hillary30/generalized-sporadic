@@ -6,8 +6,8 @@
 
 #include "generate_task_set.h"
 
-int max_requests(double T, double upper, double lower) {
-  auto floor_fraction = floor((upper - lower) / T);
+int max_requests(double T, double upper, double lower) { //max # of job requests by task
+  auto floor_fraction = floor((upper - lower) / T); 
   
   return max(0, static_cast<int>(floor_fraction) + 1);
 }
