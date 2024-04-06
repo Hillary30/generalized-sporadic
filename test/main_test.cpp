@@ -1,4 +1,6 @@
-#include "gtest/gtest.h"
+//#include "gtest/gtest.h"
+//#include "googletest\googletest\include\gtest\gtest.h"
+#include <gtest/gtest.h>
 
 #include "test_generate_tasks.h"
 #include "test_generate_task_set.h"

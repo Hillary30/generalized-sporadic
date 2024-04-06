@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B8430071-0305-3C4B-92D1-5DFE90B7BC5A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/hilla/OneDrive/Documents/GitHub/g_test/googletest/googlemock/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -SC:/Users/hilla/OneDrive/Documents/GitHub/g_test -BC:/Users/hilla/OneDrive/Documents/GitHub/g_test/build --check-stamp-file C:/Users/hilla/OneDrive/Documents/GitHub/g_test/build/googletest/googlemock/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock.pc.in;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock_main.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\googletest\googlemock\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/hilla/OneDrive/Documents/GitHub/g_test/googletest/googlemock/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -SC:/Users/hilla/OneDrive/Documents/GitHub/g_test -BC:/Users/hilla/OneDrive/Documents/GitHub/g_test/build --check-stamp-file C:/Users/hilla/OneDrive/Documents/GitHub/g_test/build/googletest/googlemock/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock.pc.in;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock_main.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\googletest\googlemock\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/hilla/OneDrive/Documents/GitHub/g_test/googletest/googlemock/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -SC:/Users/hilla/OneDrive/Documents/GitHub/g_test -BC:/Users/hilla/OneDrive/Documents/GitHub/g_test/build --check-stamp-file C:/Users/hilla/OneDrive/Documents/GitHub/g_test/build/googletest/googlemock/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock.pc.in;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock_main.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\googletest\googlemock\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/hilla/OneDrive/Documents/GitHub/g_test/googletest/googlemock/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -SC:/Users/hilla/OneDrive/Documents/GitHub/g_test -BC:/Users/hilla/OneDrive/Documents/GitHub/g_test/build --check-stamp-file C:/Users/hilla/OneDrive/Documents/GitHub/g_test/build/googletest/googlemock/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock.pc.in;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock_main.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\googletest\googlemock\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\ZERO_CHECK.vcxproj">
+      <Project>{3E46D753-0AC6-3F48-B932-7B6E10A367C4}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\googletest\googlemock\gmock.vcxproj">
+      <Project>{018CE108-5D3E-3D13-8F39-5CB065629C11}</Project>
+      <Name>gmock</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\googletest\googlemock\gmock_main.vcxproj">
+      <Project>{8241E3ED-41F7-3AC0-94FB-A660E0B5EE22}</Project>
+      <Name>gmock_main</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\googletest\googletest\gtest.vcxproj">
+      <Project>{444AF9F2-6D2A-3E6E-A6ED-A908611EA72C}</Project>
+      <Name>gtest</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\googletest\googletest\gtest_main.vcxproj">
+      <Project>{9E2FB290-D1CD-34BB-8029-84DAF37B0952}</Project>
+      <Name>gtest_main</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
