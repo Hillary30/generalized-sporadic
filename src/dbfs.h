@@ -29,11 +29,11 @@ double demand_based_function(double C, double T, double upper, double lower) {
 }
 
 double demand_based_function_LO(const Task& task, double ts) {
-  return demand_based_function(task.C_LO, task.T, ts, task.tight_D);
+  return demand_based_function(task.C_LO, task.T, ts, task.tight_D); //least pessimistic WCET w/ tightened deadline
 }
 
 double demand_based_function_HI(const Task& task, double t, double ts) {
-  return demand_based_function(task.C_HI, task.T, t - task.D, ts);
+  return demand_based_function(task.C_HI, task.T, t - task.D, ts); //most pessimistic WCET & time switch
 }
 
 double demand_based_function_CO(const Task& task, double t, double ts) {

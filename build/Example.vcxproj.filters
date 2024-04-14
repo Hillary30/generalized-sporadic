@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\Example.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\Example.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\dbfs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\ekberg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\generate_task_set.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\generate_tasks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\schedulability.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\search_algorithm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8C9A5B73-DE19-35FA-87C8-35111F9AE5B0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{769C4960-741F-37BE-93F7-6C9488595E76}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

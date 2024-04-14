@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\src\gtest-all.cc">
+    <ClCompile Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\src\gtest-all.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{E0EF076F-850B-387D-BB49-5FAE4C3F9369}</UniqueIdentifier>
+      <UniqueIdentifier>{769C4960-741F-37BE-93F7-6C9488595E76}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

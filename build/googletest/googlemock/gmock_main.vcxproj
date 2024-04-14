@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8241E3ED-41F7-3AC0-94FB-A660E0B5EE22}</ProjectGuid>
+    <ProjectGuid>{D8C96C67-491F-361F-9C41-2869816E9A2E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -59,165 +59,188 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\lib\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\lib\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">gmock_main.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">gmock_main</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\lib\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\lib\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">gmock_main.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">gmock_main</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\lib\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\lib\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">gmock_main.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">gmock_main</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\lib\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\lib\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">gmock_main.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">gmock_main</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck>true</BufferSecurityCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4251;4275;4702</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <LanguageStandard>stdcpp14</LanguageStandard>
+      <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWarningAsError>true</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level4</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE;WIN32;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat>
-      </DebugInformationFormat>
-      <ProgramDataBaseFileName>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\lib\Debug\gmock_mainpdb_debug_postfix-NOTFOUND.pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\lib\Debug\gmock_mainpdb_debug_postfix-NOTFOUND.pdb</ProgramDataBaseFileName>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <DisableSpecificWarnings>4251;4275;4702</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <LanguageStandard>stdcpp14</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWarningAsError>true</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level4</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE;WIN32;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
-      <ProgramDataBaseFileName>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\lib\Release\gmock_main.pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\lib\Release\gmock_main.pdb</ProgramDataBaseFileName>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <DisableSpecificWarnings>4251;4275;4702</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <LanguageStandard>stdcpp14</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWarningAsError>true</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level4</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE;WIN32;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
-      <ProgramDataBaseFileName>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\lib\MinSizeRel\gmock_main.pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\lib\MinSizeRel\gmock_main.pdb</ProgramDataBaseFileName>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BufferSecurityCheck>true</BufferSecurityCheck>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4251;4275;4702</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <LanguageStandard>stdcpp14</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWarningAsError>true</TreatWarningAsError>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level4</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);_UNICODE;UNICODE;WIN32;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat>
-      </DebugInformationFormat>
-      <ProgramDataBaseFileName>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\lib\RelWithDebInfo\gmock_main.pdb</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\lib\RelWithDebInfo\gmock_main.pdb</ProgramDataBaseFileName>
       <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\include;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/hilla/OneDrive/Documents/GitHub/g_test/googletest/googlemock/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/googletest/googlemock/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -SC:/Users/hilla/OneDrive/Documents/GitHub/g_test -BC:/Users/hilla/OneDrive/Documents/GitHub/g_test/build --check-stamp-file C:/Users/hilla/OneDrive/Documents/GitHub/g_test/build/googletest/googlemock/CMakeFiles/generate.stamp
+"C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -SC:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test -BC:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/build --check-stamp-file C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/build/googletest/googlemock/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -225,12 +248,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock.pc.in;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock_main.pc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\googletest\googlemock\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\cmake\gmock.pc.in;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\cmake\gmock_main.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\googletest\googlemock\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/hilla/OneDrive/Documents/GitHub/g_test/googletest/googlemock/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/googletest/googlemock/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -SC:/Users/hilla/OneDrive/Documents/GitHub/g_test -BC:/Users/hilla/OneDrive/Documents/GitHub/g_test/build --check-stamp-file C:/Users/hilla/OneDrive/Documents/GitHub/g_test/build/googletest/googlemock/CMakeFiles/generate.stamp
+"C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -SC:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test -BC:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/build --check-stamp-file C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/build/googletest/googlemock/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -238,12 +261,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock.pc.in;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock_main.pc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\googletest\googlemock\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\cmake\gmock.pc.in;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\cmake\gmock_main.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\googletest\googlemock\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/hilla/OneDrive/Documents/GitHub/g_test/googletest/googlemock/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/googletest/googlemock/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -SC:/Users/hilla/OneDrive/Documents/GitHub/g_test -BC:/Users/hilla/OneDrive/Documents/GitHub/g_test/build --check-stamp-file C:/Users/hilla/OneDrive/Documents/GitHub/g_test/build/googletest/googlemock/CMakeFiles/generate.stamp
+"C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -SC:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test -BC:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/build --check-stamp-file C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/build/googletest/googlemock/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -251,12 +274,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock.pc.in;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock_main.pc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\googletest\googlemock\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\cmake\gmock.pc.in;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\cmake\gmock_main.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\googletest\googlemock\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/hilla/OneDrive/Documents/GitHub/g_test/googletest/googlemock/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/googletest/googlemock/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -SC:/Users/hilla/OneDrive/Documents/GitHub/g_test -BC:/Users/hilla/OneDrive/Documents/GitHub/g_test/build --check-stamp-file C:/Users/hilla/OneDrive/Documents/GitHub/g_test/build/googletest/googlemock/CMakeFiles/generate.stamp
+"C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -SC:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test -BC:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/build --check-stamp-file C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/build/googletest/googlemock/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -264,19 +287,19 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock.pc.in;C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\cmake\gmock_main.pc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\googletest\googlemock\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckCSourceCompiles.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckIncludeFile.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\CheckLibraryExists.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindPackageMessage.cmake;C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\share\cmake-3.29\Modules\FindThreads.cmake;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\cmake\gmock.pc.in;C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\cmake\gmock_main.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\googletest\googlemock\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googletest\src\gtest-all.cc" />
-    <ClCompile Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\src\gmock-all.cc" />
-    <ClCompile Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\googletest\googlemock\src\gmock_main.cc" />
+    <ClCompile Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googletest\src\gtest-all.cc" />
+    <ClCompile Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\src\gmock-all.cc" />
+    <ClCompile Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\googletest\googlemock\src\gmock_main.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\ZERO_CHECK.vcxproj">
-      <Project>{3E46D753-0AC6-3F48-B932-7B6E10A367C4}</Project>
+    <ProjectReference Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\ZERO_CHECK.vcxproj">
+      <Project>{59923254-B207-3096-925E-74E89EF30826}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\hilla\OneDrive\Documents\GitHub\g_test\build\CMakeFiles\7ccfd197644d74d92f04da394877fe59\INSTALL_force.rule">
+    <CustomBuild Include="C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\CMakeFiles\608c2a614c7744caa31aa4263b9143cc\INSTALL_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{3513188C-273C-3390-93FE-CE89DBB29B8B}</UniqueIdentifier>
+      <UniqueIdentifier>{51F187F7-34E4-34C8-92E6-819FA7DFDBAB}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

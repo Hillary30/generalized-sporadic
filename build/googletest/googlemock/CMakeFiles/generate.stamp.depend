@@ -5,6 +5,6 @@ C:/Program Files (x86)/cmake-3.29.1-windows-x86_64/share/cmake-3.29/Modules/Chec
 C:/Program Files (x86)/cmake-3.29.1-windows-x86_64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake
 C:/Program Files (x86)/cmake-3.29.1-windows-x86_64/share/cmake-3.29/Modules/FindPackageMessage.cmake
 C:/Program Files (x86)/cmake-3.29.1-windows-x86_64/share/cmake-3.29/Modules/FindThreads.cmake
-C:/Users/hilla/OneDrive/Documents/GitHub/g_test/googletest/googlemock/CMakeLists.txt
-C:/Users/hilla/OneDrive/Documents/GitHub/g_test/googletest/googlemock/cmake/gmock.pc.in
-C:/Users/hilla/OneDrive/Documents/GitHub/g_test/googletest/googlemock/cmake/gmock_main.pc.in
+C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/googletest/googlemock/CMakeLists.txt
+C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/googletest/googlemock/cmake/gmock.pc.in
+C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/googletest/googlemock/cmake/gmock_main.pc.in

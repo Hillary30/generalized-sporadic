@@ -24,12 +24,23 @@ struct Task {
 
   Task() {
     ID = -1;
-    T = 0;          //min separation interval between two consecutive releases of task's job or instances
-    C_LO = 0;       //less pessimistic WCET
+    T = 0;          //aka: p, min separation interval between two consecutive releases of task's job or instances
+    C_LO = 0;       //less pessimistic WCET of each job? 
     C_HI = 0;       //more pessimistic WCET
-    D = 0;          //relative deadline
-    tight_D = -1;
+    D = 0;          //relative deadline of a job after release
+    tight_D = -1;   //tightened deadline for EDS, virtual deadline for EDF-VD
     L = Level::LO;  //Level of criticality, LO or HI
+
+    /*
+    Job, Jij of task i:
+    aij: arrival time of job = aij = (j - 1)T
+    yij: execution requirement, value is between (0, (C_LO or C_HI)], range depends on current crit level
+    ^we do not know these values in advance - only during execution time
+    dij = aij + D, absolute deadline
+
+    Scenario I: collection of arrival times and execution requirements of a task system
+    I = (aij ,yij), i is an element of [n] and j >= 1
+    */
   }
 
   Task(int ID, int T, int C_LO, int C_HI, int D, int tight_D = -1, Level L = LO)
