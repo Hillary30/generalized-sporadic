@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/googletest
+# Install script for directory: C:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Example")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/CMakeHigh")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/build/googletest/googlemock/cmake_install.cmake")
+  include("C:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic/build/googletest/googlemock/cmake_install.cmake")
 
 endif()
 

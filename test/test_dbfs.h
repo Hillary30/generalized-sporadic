@@ -180,7 +180,7 @@ TEST(DBF, DemandBasedFunctionRandomTaskSet) {
 TEST(DBF, SumDBFTaskSet) {
   int t = 1000;
   TaskSet task_set = TaskSet(0.7);
-
+  // cout << "Sum_DBF: " << sum_dbf(task_set, t, t/2) << endl;
   EXPECT_EQ(sum_dbf(task_set, t, t / 2), sum_dbf_LO(task_set, t / 2) + sum_dbf_HI(task_set, t, t / 2) + sum_dbf_CO(task_set, t, t / 2) + sum_dbf_UN(task_set, t, t / 2));
 }
 

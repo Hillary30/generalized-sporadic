@@ -52,10 +52,10 @@ RM = "C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test
+CMAKE_SOURCE_DIR = C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build
+CMAKE_BINARY_DIR = C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build
 
 # Include any dependencies generated for this target.
 include test/CMakeFiles/CMakeTest.dir/depend.make
@@ -70,18 +70,18 @@ include test/CMakeFiles/CMakeTest.dir/flags.make
 
 test/CMakeFiles/CMakeTest.dir/main_test.cpp.obj: test/CMakeFiles/CMakeTest.dir/flags.make
 test/CMakeFiles/CMakeTest.dir/main_test.cpp.obj: test/CMakeFiles/CMakeTest.dir/includes_CXX.rsp
-test/CMakeFiles/CMakeTest.dir/main_test.cpp.obj: C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/test/main_test.cpp
+test/CMakeFiles/CMakeTest.dir/main_test.cpp.obj: C:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic/test/main_test.cpp
 test/CMakeFiles/CMakeTest.dir/main_test.cpp.obj: test/CMakeFiles/CMakeTest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/CMakeTest.dir/main_test.cpp.obj"
-	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\test && C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/CMakeTest.dir/main_test.cpp.obj -MF CMakeFiles\CMakeTest.dir\main_test.cpp.obj.d -o CMakeFiles\CMakeTest.dir\main_test.cpp.obj -c C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\test\main_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/CMakeTest.dir/main_test.cpp.obj"
+	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\test && C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/CMakeTest.dir/main_test.cpp.obj -MF CMakeFiles\CMakeTest.dir\main_test.cpp.obj.d -o CMakeFiles\CMakeTest.dir\main_test.cpp.obj -c C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\test\main_test.cpp
 
 test/CMakeFiles/CMakeTest.dir/main_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeTest.dir/main_test.cpp.i"
-	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\test && C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\test\main_test.cpp > CMakeFiles\CMakeTest.dir\main_test.cpp.i
+	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\test && C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\test\main_test.cpp > CMakeFiles\CMakeTest.dir\main_test.cpp.i
 
 test/CMakeFiles/CMakeTest.dir/main_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeTest.dir/main_test.cpp.s"
-	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\test && C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\test\main_test.cpp -o CMakeFiles\CMakeTest.dir\main_test.cpp.s
+	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\test && C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\test\main_test.cpp -o CMakeFiles\CMakeTest.dir\main_test.cpp.s
 
 # Object files for target CMakeTest
 CMakeTest_OBJECTS = \
@@ -97,18 +97,18 @@ test/CMakeTest.exe: lib/libgtest.a
 test/CMakeTest.exe: test/CMakeFiles/CMakeTest.dir/linkLibs.rsp
 test/CMakeTest.exe: test/CMakeFiles/CMakeTest.dir/objects1.rsp
 test/CMakeTest.exe: test/CMakeFiles/CMakeTest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable CMakeTest.exe"
-	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\CMakeTest.dir\link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable CMakeTest.exe"
+	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\CMakeTest.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 test/CMakeFiles/CMakeTest.dir/build: test/CMakeTest.exe
 .PHONY : test/CMakeFiles/CMakeTest.dir/build
 
 test/CMakeFiles/CMakeTest.dir/clean:
-	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\test && $(CMAKE_COMMAND) -P CMakeFiles\CMakeTest.dir\cmake_clean.cmake
+	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\test && $(CMAKE_COMMAND) -P CMakeFiles\CMakeTest.dir\cmake_clean.cmake
 .PHONY : test/CMakeFiles/CMakeTest.dir/clean
 
 test/CMakeFiles/CMakeTest.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\test C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\test C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\test\CMakeFiles\CMakeTest.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\test C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\test C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\test\CMakeFiles\CMakeTest.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : test/CMakeFiles/CMakeTest.dir/depend
 

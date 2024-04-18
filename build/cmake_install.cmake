@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test
+# Install script for directory: C:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Example")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/CMakeHigh")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,12 +39,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/build/googletest/cmake_install.cmake")
+  include("C:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic/build/googletest/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/build/test/cmake_install.cmake")
+  include("C:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic/build/test/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

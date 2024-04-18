@@ -56,10 +56,10 @@ RM = "C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test
+CMAKE_SOURCE_DIR = C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build
+CMAKE_BINARY_DIR = C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -141,14 +141,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\CMakeFiles C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\googletest\\CMakeFiles\progress.marks
-	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 googletest/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\CMakeFiles 0
+	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\CMakeFiles C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\googletest\\CMakeFiles\progress.marks
+	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 googletest/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 googletest/clean
+	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 googletest/clean
 .PHONY : clean
 
 # The main clean target
@@ -157,17 +157,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 googletest/preinstall
+	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 googletest/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 googletest/preinstall
+	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 googletest/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -194,6 +194,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

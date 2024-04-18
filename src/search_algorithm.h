@@ -45,7 +45,7 @@ deque<int> get_hi_candidates(TaskSet& task_set) {
 pair<int, int> get_failure_time(TaskSet& task_set) {
   for (int i = 2; i < task_set.get_t_max() + 1; ++i) {
     for (int j = 1; j < i; ++j) {
-      if (sum_dbf(task_set, i, j) > i) {
+      if (sum_dbf(task_set, i, j) > i) { 
         return {i, j};
       }
     }

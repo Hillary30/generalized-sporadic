@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/test
+# Install script for directory: C:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Example")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/CMakeHigh")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

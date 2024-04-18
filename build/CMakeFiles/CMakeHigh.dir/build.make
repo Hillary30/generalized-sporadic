@@ -52,10 +52,10 @@ RM = "C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test
+CMAKE_SOURCE_DIR = C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build
+CMAKE_BINARY_DIR = C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CMakeHigh.dir/depend.make
@@ -69,18 +69,18 @@ include CMakeFiles/CMakeHigh.dir/progress.make
 include CMakeFiles/CMakeHigh.dir/flags.make
 
 CMakeFiles/CMakeHigh.dir/main.cpp.obj: CMakeFiles/CMakeHigh.dir/flags.make
-CMakeFiles/CMakeHigh.dir/main.cpp.obj: C:/Users/hilla/OneDrive/Documents/GitHub/gen_sporadic_test/main.cpp
+CMakeFiles/CMakeHigh.dir/main.cpp.obj: C:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic/main.cpp
 CMakeFiles/CMakeHigh.dir/main.cpp.obj: CMakeFiles/CMakeHigh.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CMakeHigh.dir/main.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeHigh.dir/main.cpp.obj -MF CMakeFiles\CMakeHigh.dir\main.cpp.obj.d -o CMakeFiles\CMakeHigh.dir\main.cpp.obj -c C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CMakeHigh.dir/main.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeHigh.dir/main.cpp.obj -MF CMakeFiles\CMakeHigh.dir\main.cpp.obj.d -o CMakeFiles\CMakeHigh.dir\main.cpp.obj -c C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\main.cpp
 
 CMakeFiles/CMakeHigh.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeHigh.dir/main.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\main.cpp > CMakeFiles\CMakeHigh.dir\main.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\main.cpp > CMakeFiles\CMakeHigh.dir\main.cpp.i
 
 CMakeFiles/CMakeHigh.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeHigh.dir/main.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\main.cpp -o CMakeFiles\CMakeHigh.dir\main.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\main.cpp -o CMakeFiles\CMakeHigh.dir\main.cpp.s
 
 # Object files for target CMakeHigh
 CMakeHigh_OBJECTS = \
@@ -92,7 +92,7 @@ CMakeHigh_EXTERNAL_OBJECTS =
 libCMakeHigh.a: CMakeFiles/CMakeHigh.dir/main.cpp.obj
 libCMakeHigh.a: CMakeFiles/CMakeHigh.dir/build.make
 libCMakeHigh.a: CMakeFiles/CMakeHigh.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libCMakeHigh.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libCMakeHigh.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\CMakeHigh.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\CMakeHigh.dir\link.txt --verbose=$(VERBOSE)
 
@@ -105,6 +105,6 @@ CMakeFiles/CMakeHigh.dir/clean:
 .PHONY : CMakeFiles/CMakeHigh.dir/clean
 
 CMakeFiles/CMakeHigh.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build C:\Users\hilla\OneDrive\Documents\GitHub\gen_sporadic_test\build\CMakeFiles\CMakeHigh.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\CMakeFiles\CMakeHigh.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/CMakeHigh.dir/depend
 
