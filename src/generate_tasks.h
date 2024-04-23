@@ -29,7 +29,7 @@ struct Task {
     C_HI = 0;       //more pessimistic WCET
     D = 0;          //relative deadline of a job after release
     tight_D = -1;   //tightened deadline for EDS, virtual deadline for EDF-VD
-    L = Level::LO;  //Level of criticality, LO or HI
+    L = Level::LO;  //Level of criticality, xi, LO or HI
 
     /*
     Job, Jij of task i:

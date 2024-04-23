@@ -4,8 +4,10 @@
 #include <deque>
 #include <algorithm>
 #include <string>
+#include <queue>
 
 #include "schedulability.h"
+#include "edf_vd.h"
 
 bool is_eligible(TaskSet& task_set) {
   return !task_set.get_thm1() && task_set.get_thm2() && task_set.get_thm3();
@@ -115,18 +117,18 @@ string naive_algorithm(TaskSet& task_set) {
 
   deque<int> candidates = get_hi_candidates(task_set); //Naive selects HI tasks at random
   int best_candidate = -1;
-  auto [t, ts] = get_failure_time(task_set);
+  //auto [t, ts] = get_failure_time(task_set);
 
-  while (!candidates.empty()) {
-    best_candidate = candidates.front();
+  while (!candidates.empty()) { // while there are still tasks
+    best_candidate = candidates.front(); //get the task that arrived first
     candidates.pop_front();
 
-    int C_LO = task_set.task_set[best_candidate].C_LO;
-    int previous_tight_D = task_set.task_set[best_candidate].tight_D;
+    int C_LO = task_set.task_set[best_candidate].C_LO; //first task execution
+    int previous_tight_D = task_set.task_set[best_candidate].tight_D; //store the first task tightended deadline
 
-    task_set.task_set[best_candidate].tight_D -= 1;
+    task_set.task_set[best_candidate].tight_D -= 1; //subtract 1 time unit from the tight deadline
     
-    if (task_set.task_set[best_candidate].tight_D < C_LO) {
+    if (task_set.task_set[best_candidate].tight_D < C_LO) { //if miss deadline
       task_set.task_set[best_candidate].tight_D = previous_tight_D;
       continue;
     }
@@ -147,5 +149,44 @@ string naive_algorithm(TaskSet& task_set) {
 
   return "No more eligible candidates";
 }
+//EDF or EDF-VD
+//runtime scheduling
+deque<int> get_hi_candidates(TaskSet& task_set) {
+  deque<int> candidates;
+  for (const auto& [key, task] : task_set.get_task_set()) {
+    if (task.L == HI) {
+      candidates.push_back(task.ID);
+    }
+  }
+  return candidates;
+}
+
+string edf_vd_algorithm(TaskSet& task_set) {
+  if(offline_pp(task_set, 500, 0) == false) return "Not eligible for edf-vd";
+  //deque<Task> candidates = get_hi_candidates(task_set);
+
+  int best_candidate = -1;
+  auto [t, ts] = get_failure_time(task_set);
+
+  if (t == -1 && ts == -1) {
+    task_set.set_thm1(true);
+    return "Success";
+  }
+
+  return "No more eligible candidates";
+}
+    //random hi tasks
+    /*
+    //if current job executes more than kth level WCET --> current_level() > k
+    // initially current_level() = 1
+    while(!candidates.empty()) {
+        queue_lo.push(candidate by virtual deadline)
+        queue_hi.push(if candidate hi, by original deadline)
+    }
+
+    
+    
+    */
+
 
 #endif

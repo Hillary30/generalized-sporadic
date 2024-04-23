@@ -10,6 +10,10 @@ public:
   double utilization, t_max;
   bool thm1, thm2, thm3;
 
+  //EDF-VD
+  int opp_klevel = -1;
+
+
   TaskSet() {}
 
   TaskSet(double target_u, double hi_probability = 0.5, int wcet_ratio = 4) {
@@ -20,6 +24,7 @@ public:
     this->thm1 = false;
     this->thm2 = false;
     this->thm3 = false;
+    this->opp_klevel = -1;
 
     while (true) {
       Task task = generate_task(this->num_tasks, hi_probability, wcet_ratio);
@@ -58,7 +63,8 @@ public:
     this->thm3 = thm3;
     this->lo_tasks_list = task_set_dict["lo"];
     this->hi_tasks_list = task_set_dict["hi"]; 
-    
+    this->opp_klevel = -1;
+
     for (Task task : this->lo_tasks_list) {
       this->task_set[task.ID] = task;
     }
@@ -103,7 +109,8 @@ public:
            this->t_max == other.t_max &&
            this->thm1 == other.thm1 &&
            this->thm2 == other.thm2 &&
-           this->thm3 == other.thm3;
+           this->thm3 == other.thm3 &&
+           this->opp_klevel == other.opp_klevel;
   }
 
   double calculate_t_max() {
@@ -138,6 +145,12 @@ public:
     }
   }
 
+  void set_tightd_eq_deadline() {
+    for(auto& [key, task] : task_set) {
+      task.tight_D = task.D;
+    }
+  }
+
   string task_set_to_string() {
     string task_set_string = "Task set: " + to_string(num_tasks) + " tasks, t_max = " + to_string(t_max) + ", utilization = " + to_string(utilization) + "\n";
     task_set_string += "Thm 1, 2, 3 -- " + thm_to_string(thm1) + ", " + thm_to_string(thm2) + ", " + thm_to_string(thm3) + "\n";
@@ -166,7 +179,9 @@ public:
   bool get_thm2() const { return thm2; }
   bool get_thm3() const { return thm3; }
   int get_lo_count() const { return this->lo_tasks_list.size(); }
+  vector<Task> get_lo_tasks_list() const { return lo_tasks_list; }
   int get_hi_count() const { return this->hi_tasks_list.size(); }
+  vector<Task> get_hi_tasks_list() const { return hi_tasks_list; }
   map<int, Task> get_task_set() const { return task_set; }
 
 private:
