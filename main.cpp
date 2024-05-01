@@ -68,7 +68,7 @@ int main(int argc, char* argv[]) {
     // Enhanced Deadline Search Algorithm
     auto start_time = chrono::high_resolution_clock::now();
     if (is_eligible(task_set_eds)) {
-      if (deadline_search_algorithm(task_set_eds).first == "Success") {
+      if (deadline_search_algorithm(task_set_eds) == "Success") {
         after_eds_success++;
       }
     } 
@@ -79,7 +79,7 @@ int main(int argc, char* argv[]) {
     // Naive Algorithm
     start_time = chrono::high_resolution_clock::now();
     if (is_eligible(task_set_naive)) {
-      if (naive_algorithm(task_set_eds).first == "Success") {
+      if (naive_algorithm(task_set_eds) == "Success") {
         after_naive_success++;
       }
     } 
