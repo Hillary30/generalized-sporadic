@@ -86,7 +86,7 @@ double sum_dbf_UN(const TaskSet& task_set, double t, double ts) {
 double sum_dbf(const TaskSet& task_set, double t, double ts) {
   double demand_sum = 0;
   for (const auto& [key, task] : task_set.get_task_set()) {
-    if (task.C_LO < task.C_HI) {
+    if (task.C_LO < task.C_HI) { //if HI task
       demand_sum += demand_based_function_HI(task, t, ts) + demand_based_function_CO(task, t, ts);
     } else {
       demand_sum += demand_based_function_UN(task, t, ts);

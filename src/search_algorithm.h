@@ -44,6 +44,7 @@ deque<int> get_hi_candidates(TaskSet& task_set) {
   return candidates;
 }
 
+
 pair<int, int> get_failure_time(TaskSet& task_set) {
   for (int i = 2; i < task_set.get_t_max() + 1; ++i) {
     for (int j = 1; j < i; ++j) {
@@ -149,32 +150,40 @@ string naive_algorithm(TaskSet& task_set) {
 
   return "No more eligible candidates";
 }
+
 //EDF or EDF-VD
 //runtime scheduling
-deque<int> get_hi_candidates(TaskSet& task_set) {
-  deque<int> candidates;
-  for (const auto& [key, task] : task_set.get_task_set()) {
-    if (task.L == HI) {
-      candidates.push_back(task.ID);
-    }
-  }
-  return candidates;
-}
-
 string edf_vd_algorithm(TaskSet& task_set) {
-  if(offline_pp(task_set, 500, 0) == false) return "Not eligible for edf-vd";
-  //deque<Task> candidates = get_hi_candidates(task_set);
+  bool can_schedule_offline_pp = offline_pp(task_set, 500, 0);
 
-  int best_candidate = -1;
-  auto [t, ts] = get_failure_time(task_set);
-
-  if (t == -1 && ts == -1) {
-    task_set.set_thm1(true);
+  if(can_schedule_offline_pp == false) {
+    return "Not eligible for deadline-tightening";
+  }
+  else if(can_schedule_offline_pp == true) {
+    
     return "Success";
   }
 
-  return "No more eligible candidates";
+  return "Fail";
 }
+
+  // deque<Task> candidates = get_hi_candidates_task(task_set);
+  // priority_queue<Task, vector<Task>, lessThanByDeadline> priori_LO;
+
+
+  // Task best_candidate;
+  //auto [t, ts] = get_failure_time(task_set);
+
+  // while(!candidates.empty()) {
+  //   best_candidate = candidates.front();
+  //   candidates.pop_front();
+
+  //}
+  // if (t == -1 && ts == -1) { //this is wrong, it sohuld look 
+  //   task_set.set_thm1(true);
+  //   return "Success";
+  // }
+
     //random hi tasks
     /*
     //if current job executes more than kth level WCET --> current_level() > k

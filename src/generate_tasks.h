@@ -21,6 +21,7 @@ enum Level { LO, HI }; //Low and High criticality
 struct Task {
   int ID, T, C_LO, C_HI, D, tight_D;
   Level L;
+  
 
   Task() {
     ID = -1;
@@ -30,17 +31,6 @@ struct Task {
     D = 0;          //relative deadline of a job after release
     tight_D = -1;   //tightened deadline for EDS, virtual deadline for EDF-VD
     L = Level::LO;  //Level of criticality, xi, LO or HI
-
-    /*
-    Job, Jij of task i:
-    aij: arrival time of job = aij = (j - 1)T
-    yij: execution requirement, value is between (0, (C_LO or C_HI)], range depends on current crit level
-    ^we do not know these values in advance - only during execution time
-    dij = aij + D, absolute deadline
-
-    Scenario I: collection of arrival times and execution requirements of a task system
-    I = (aij ,yij), i is an element of [n] and j >= 1
-    */
   }
 
   Task(int ID, int T, int C_LO, int C_HI, int D, int tight_D = -1, Level L = LO)
