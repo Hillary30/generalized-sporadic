@@ -93,6 +93,7 @@ bool offline_pp(TaskSet& task_set, double t = 500, double ts = 0) {
     }
     if(schedulability_lemma_44(load) == true) {
         task_set.opp_klevel = 2; //HI --> Normal EDF
+        //cout << "TightD == D" << endl;
         task_set.set_tightd_eq_deadline();
         //cout << "K Level 2" << endl;
     }
@@ -111,7 +112,7 @@ bool offline_pp(TaskSet& task_set, double t = 500, double ts = 0) {
                 }
             }
         }
-        else /*if(schedulability_lemma_46(load_LO, load_HI) == false) */{ //if unschedulable
+        else { //if unschedulable
             //cout << "Fail Lemma 46" << endl;
             return false; //return unschedulable
         }

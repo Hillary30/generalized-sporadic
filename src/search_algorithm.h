@@ -153,15 +153,47 @@ string naive_algorithm(TaskSet& task_set) {
 
 //EDF or EDF-VD
 //runtime scheduling
+deque<int> get_sort_hi_candidates(TaskSet& task_set) {
+  vector<Task> hi_tasks;
+
+  for (const auto& [key, task] : task_set.get_task_set()) {
+    if (task.L == HI) {
+      hi_tasks.push_back(task);
+    }
+  }
+
+  sort(hi_tasks.begin(), hi_tasks.end(), [](const Task& a, const Task& b) {
+    return a.tight_D > b.tight_D;
+  });
+
+  deque<int> candidates;
+  for (const auto& task : hi_tasks) {
+    candidates.push_back(task.ID);
+  }
+
+  return candidates;
+}
+
 string edf_vd_algorithm(TaskSet& task_set) {
   bool can_schedule_offline_pp = offline_pp(task_set, 500, 0);
 
-  if(can_schedule_offline_pp == false) {
-    return "Not eligible for deadline-tightening";
-  }
-  else if(can_schedule_offline_pp == true) {
-    
+  if(can_schedule_offline_pp == true) {
+    cout << "Pass OPP" << endl;
+    deque<int> candidates = get_sort_hi_candidates(task_set); 
+
+    while(!candidates.empty() /*|| !queue_deadline.empty() || !queue_virtual.empty()*/) {
+      int taskIndex = candidates.front();
+      candidates.pop_front();
+
+      if(task_set.task_set[taskIndex].C_LO > task_set.task_set[taskIndex].tight_D) {
+        cout << "Missed Deadline" << endl;
+      }
+      
+    }
     return "Success";
+  }
+  else if(can_schedule_offline_pp == false) {
+    return "Not eligible for deadline-tightening";
   }
 
   return "Fail";

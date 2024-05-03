@@ -21,7 +21,6 @@ enum Level { LO, HI }; //Low and High criticality
 struct Task {
   int ID, T, C_LO, C_HI, D, tight_D;
   Level L;
-  
 
   Task() {
     ID = -1;
