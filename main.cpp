@@ -67,7 +67,7 @@ int main(int argc, char* argv[]) {
       before_success++;
       after_eds_success++;
       after_naive_success++;
-      after_edf_vd_success++;
+      //after_edf_vd_success++;
     }
 
     // Enhanced Deadline Search Algorithm
@@ -95,11 +95,11 @@ int main(int argc, char* argv[]) {
 
     //EDF-VD
     start_time = chrono::high_resolution_clock::now();
-    if (is_eligible(task_set_edf_vd)) {
+    //if (is_eligible(task_set_edf_vd)) {
       if (edf_vd_algorithm(task_set_edf_vd) == "Success") {
         after_edf_vd_success++;
       }
-    }
+    //}
     end_time = chrono::high_resolution_clock::now();
     duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     assert(end_time >= start_time);

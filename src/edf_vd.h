@@ -82,7 +82,7 @@ bool schedulability_lemma_46(double load_lo, double load_hi) {
 }
 
 
-bool offline_pp(TaskSet& task_set, double t = 500, double ts = 0) {
+bool offline_pp(TaskSet& task_set, double t = 500, double ts = 25) {
     double load = sum_load(task_set, t, ts);
     double load_LO = sum_load_LO(task_set, t, ts);
     double load_HI = sum_load_HI(task_set, t, ts);
@@ -94,8 +94,11 @@ bool offline_pp(TaskSet& task_set, double t = 500, double ts = 0) {
     if(schedulability_lemma_44(load) == true) {
         task_set.opp_klevel = 2; //HI --> Normal EDF
         //cout << "TightD == D" << endl;
-        task_set.set_tightd_eq_deadline();
+        //task_set.set_tightd_eq_deadline();
         //cout << "K Level 2" << endl;
+        for (auto& [key, task] : task_set.get_task_set()) {
+            task.tight_D = task.D;
+        }
     }
     else {
         if(schedulability_lemma_46(load_LO, load_HI) == true) {
