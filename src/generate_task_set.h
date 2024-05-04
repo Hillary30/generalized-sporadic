@@ -183,6 +183,7 @@ public:
   int get_hi_count() const { return this->hi_tasks_list.size(); }
   vector<Task> get_hi_tasks_list() const { return hi_tasks_list; }
   map<int, Task> get_task_set() const { return task_set; }
+  map<int, Task>& get_task_set_ref() { return task_set; }
 
 private:
   vector<Task> lo_tasks_list;
