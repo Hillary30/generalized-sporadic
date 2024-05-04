@@ -1,4 +1,3 @@
-
 # Ignore hidden files
 .vscode/*.json
 .DS_Store
@@ -10,11 +9,6 @@
 # Ignore files in archive folder
 /archive/*
 .vscode/tasks.json
-/build/*
-/build/*.cmake/*
-/build/CMakeFiles/*
-
-**/CMakeFiles/
 
 # Ignore executables
 test/main_test
