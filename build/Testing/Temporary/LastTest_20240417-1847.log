@@ -1,0 +1,173 @@
+Start testing: Apr 17 18:58 Central Daylight Time
+----------------------------------------------------------
+1/1 Testing: CMakeTest
+1/1 Test: CMakeTest
+Command: "C:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic/build/test/CMakeTest.exe"
+Directory: C:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic/build/test
+"CMakeTest" start time: Apr 17 18:58 Central Daylight Time
+Output:
+----------------------------------------------------------
+[==========] Running 57 tests from 7 test suites.
+[----------] Global test environment set-up.
+[----------] 9 tests from GenerateTasks
+[ RUN      ] GenerateTasks.CanaryTest
+[       OK ] GenerateTasks.CanaryTest (0 ms)
+[ RUN      ] GenerateTasks.LevelHiOrLo
+[       OK ] GenerateTasks.LevelHiOrLo (2 ms)
+[ RUN      ] GenerateTasks.GenerateCLo
+[       OK ] GenerateTasks.GenerateCLo (0 ms)
+[ RUN      ] GenerateTasks.GenerateCHi
+[       OK ] GenerateTasks.GenerateCHi (0 ms)
+[ RUN      ] GenerateTasks.GenerateD
+[       OK ] GenerateTasks.GenerateD (0 ms)
+[ RUN      ] GenerateTasks.GenerateT
+[       OK ] GenerateTasks.GenerateT (0 ms)
+[ RUN      ] GenerateTasks.GenerateWithSeed
+[       OK ] GenerateTasks.GenerateWithSeed (0 ms)
+[ RUN      ] GenerateTasks.GenerateRandomTask
+[       OK ] GenerateTasks.GenerateRandomTask (0 ms)
+[ RUN      ] GenerateTasks.AssignmentAndEqualOperator
+[       OK ] GenerateTasks.AssignmentAndEqualOperator (0 ms)
+[----------] 9 tests from GenerateTasks (2 ms total)
+
+[----------] 4 tests from GenerateTaskSet
+[ RUN      ] GenerateTaskSet.GenerateRandomTaskSet
+[       OK ] GenerateTaskSet.GenerateRandomTaskSet (1 ms)
+[ RUN      ] GenerateTaskSet.TaskSetTMax
+[       OK ] GenerateTaskSet.TaskSetTMax (0 ms)
+[ RUN      ] GenerateTaskSet.ConstrainDeadlines
+[       OK ] GenerateTaskSet.ConstrainDeadlines (1 ms)
+[ RUN      ] GenerateTaskSet.AssignmentAndEqualOperator
+[       OK ] GenerateTaskSet.AssignmentAndEqualOperator (185 ms)
+[----------] 4 tests from GenerateTaskSet (188 ms total)
+
+[----------] 8 tests from DBF
+[ RUN      ] DBF.MaxRequests
+[       OK ] DBF.MaxRequests (0 ms)
+[ RUN      ] DBF.MaxRequestsIsN
+[       OK ] DBF.MaxRequestsIsN (0 ms)
+[ RUN      ] DBF.LowerUpperTaskSet
+[       OK ] DBF.LowerUpperTaskSet (0 ms)
+[ RUN      ] DBF.LowerUpperRandomTaskSet
+[       OK ] DBF.LowerUpperRandomTaskSet (1 ms)
+[ RUN      ] DBF.DemandBasedFunction
+[       OK ] DBF.DemandBasedFunction (0 ms)
+[ RUN      ] DBF.DemandBasedFunctionTask
+[       OK ] DBF.DemandBasedFunctionTask (0 ms)
+[ RUN      ] DBF.DemandBasedFunctionRandomTaskSet
+[       OK ] DBF.DemandBasedFunctionRandomTaskSet (0 ms)
+[ RUN      ] DBF.SumDBFTaskSet
+[       OK ] DBF.SumDBFTaskSet (1 ms)
+[----------] 8 tests from DBF (5 ms total)
+
+[----------] 4 tests from Schedulability
+[ RUN      ] Schedulability.TrueTaskSet
+[       OK ] Schedulability.TrueTaskSet (71 ms)
+[ RUN      ] Schedulability.FalseTaskSet
+[       OK ] Schedulability.FalseTaskSet (13 ms)
+[ RUN      ] Schedulability.FalseTaskSet2
+[       OK ] Schedulability.FalseTaskSet2 (4 ms)
+[ RUN      ] Schedulability.Sched23
+[       OK ] Schedulability.Sched23 (24 ms)
+[----------] 4 tests from Schedulability (114 ms total)
+
+[----------] 20 tests from SearchAlgorithm
+[ RUN      ] SearchAlgorithm.DemandChange
+[       OK ] SearchAlgorithm.DemandChange (10 ms)
+[ RUN      ] SearchAlgorithm.TightDChange
+[       OK ] SearchAlgorithm.TightDChange (0 ms)
+[ RUN      ] SearchAlgorithm.MinimumDemand
+[       OK ] SearchAlgorithm.MinimumDemand (0 ms)
+[ RUN      ] SearchAlgorithm.IsEligible
+[       OK ] SearchAlgorithm.IsEligible (0 ms)
+[ RUN      ] SearchAlgorithm.GetBestCandidates
+[       OK ] SearchAlgorithm.GetBestCandidates (7 ms)
+[ RUN      ] SearchAlgorithm.NaiveGetHiCandidates
+[       OK ] SearchAlgorithm.NaiveGetHiCandidates (3 ms)
+[ RUN      ] SearchAlgorithm.FailureTimeExists
+[       OK ] SearchAlgorithm.FailureTimeExists (2 ms)
+[ RUN      ] SearchAlgorithm.FailureTimeDoesNotExist
+[       OK ] SearchAlgorithm.FailureTimeDoesNotExist (251 ms)
+[ RUN      ] SearchAlgorithm.IsDemandAtMinimum
+[       OK ] SearchAlgorithm.IsDemandAtMinimum (0 ms)
+[ RUN      ] SearchAlgorithm.FindOptimalTightDWithinBounds
+[       OK ] SearchAlgorithm.FindOptimalTightDWithinBounds (2 ms)
+[ RUN      ] SearchAlgorithm.FindOptimalTightDTask
+[       OK ] SearchAlgorithm.FindOptimalTightDTask (0 ms)
+[ RUN      ] SearchAlgorithm.DemandSumDecreasesWithTightenedDeadlines
+[       OK ] SearchAlgorithm.DemandSumDecreasesWithTightenedDeadlines (112 ms)
+[ RUN      ] SearchAlgorithm.EDSNotEligible
+[       OK ] SearchAlgorithm.EDSNotEligible (0 ms)
+[ RUN      ] SearchAlgorithm.EDSTightDWithinBounds
+[       OK ] SearchAlgorithm.EDSTightDWithinBounds (1 ms)
+[ RUN      ] SearchAlgorithm.EDSNoMoreEligible
+[       OK ] SearchAlgorithm.EDSNoMoreEligible (185 ms)
+[ RUN      ] SearchAlgorithm.EDSSuccess
+[       OK ] SearchAlgorithm.EDSSuccess (863 ms)
+[ RUN      ] SearchAlgorithm.NaiveNotEligible
+[       OK ] SearchAlgorithm.NaiveNotEligible (0 ms)
+[ RUN      ] SearchAlgorithm.NaiveTightDWithinBounds
+[       OK ] SearchAlgorithm.NaiveTightDWithinBounds (1 ms)
+[ RUN      ] SearchAlgorithm.NaiveNoMoreEligible
+[       OK ] SearchAlgorithm.NaiveNoMoreEligible (829 ms)
+[ RUN      ] SearchAlgorithm.NaiveSuccess
+[       OK ] SearchAlgorithm.NaiveSuccess (668 ms)
+[----------] 20 tests from SearchAlgorithm (2943 ms total)
+
+[----------] 11 tests from Ekberg
+[ RUN      ] Ekberg.Task1
+[       OK ] Ekberg.Task1 (0 ms)
+[ RUN      ] Ekberg.Task2
+[       OK ] Ekberg.Task2 (0 ms)
+[ RUN      ] Ekberg.Task2TightD
+[       OK ] Ekberg.Task2TightD (0 ms)
+[ RUN      ] Ekberg.Task3
+[       OK ] Ekberg.Task3 (0 ms)
+[ RUN      ] Ekberg.Task3TightD
+[       OK ] Ekberg.Task3TightD (0 ms)
+[ RUN      ] Ekberg.TaskSetHiSum
+[       OK ] Ekberg.TaskSetHiSum (0 ms)
+[ RUN      ] Ekberg.TaskSetLoSum
+[       OK ] Ekberg.TaskSetLoSum (0 ms)
+[ RUN      ] Ekberg.TaskSetHiSumTightD
+[       OK ] Ekberg.TaskSetHiSumTightD (0 ms)
+[ RUN      ] Ekberg.TaskSetLoSumTightD
+[       OK ] Ekberg.TaskSetLoSumTightD (0 ms)
+[ RUN      ] Ekberg.IsEligibleOrNot
+[       OK ] Ekberg.IsEligibleOrNot (0 ms)
+[ RUN      ] Ekberg.GetHiCandidates
+[       OK ] Ekberg.GetHiCandidates (1 ms)
+[----------] 11 tests from Ekberg (2 ms total)
+
+[----------] 1 test from EDF_VD
+[ RUN      ] EDF_VD.sum_load
+LO Task sum_load
+floor_fraction: 4
+HI Task sum_load
+floor_fraction: 4
+LO Task sum_load
+floor_fraction: 2
+HI Task sum_load
+floor_fraction: 1
+C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\test\test_edf_vd.h:27: Failure
+Expected: (sum_load(task_set2, t, 0)) < (0), actual: 0.7 vs 0
+
+[  FAILED  ] EDF_VD.sum_load (0 ms)
+[----------] 1 test from EDF_VD (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 57 tests from 7 test suites ran. (3256 ms total)
+[  PASSED  ] 56 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] EDF_VD.sum_load
+
+ 1 FAILED TEST
+<end of output>
+Test time =   3.61 sec
+----------------------------------------------------------
+Test Failed.
+"CMakeTest" end time: Apr 17 18:59 Central Daylight Time
+"CMakeTest" time elapsed: 00:00:03
+----------------------------------------------------------
+
+End testing: Apr 17 18:59 Central Daylight Time
