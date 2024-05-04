@@ -80,16 +80,6 @@ int main(int argc, char* argv[]) {
     auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     cum_eds_duration += duration.count();
 
-    //EDF-VD
-    start_time = chrono::high_resolution_clock::now();
-    if (edf_vd_algorithm(task_set_edf_vd) == "Success") {
-      after_edf_vd_success++;
-    }
-    end_time = chrono::high_resolution_clock::now();
-    duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
-    assert(end_time >= start_time);
-    cum_edf_vd_duration += static_cast<unsigned long long>(duration.count());
-
     // Naive Algorithm
     start_time = chrono::high_resolution_clock::now();
     if (is_eligible(task_set_naive)) {
@@ -101,6 +91,16 @@ int main(int argc, char* argv[]) {
     duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     assert(end_time >= start_time);
     cum_naive_duration += static_cast<unsigned long long>(duration.count());
+
+    //EDF-VD
+    start_time = chrono::high_resolution_clock::now();
+    if (edf_vd_algorithm(task_set_edf_vd) == "Success") {
+      after_edf_vd_success++;
+    }
+    end_time = chrono::high_resolution_clock::now();
+    duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
+    assert(end_time >= start_time);
+    cum_edf_vd_duration += static_cast<unsigned long long>(duration.count());
   }
 
   result.push_back(static_cast<int>(utilization * 1000));
