@@ -98,12 +98,11 @@ bool offline_pp(TaskSet& task_set, double t = 500, double ts = 25) {
     }
     else {
         if(schedulability_lemma_46(load_LO, load_HI) == true) {
-            task_set.opp_klevel = 1; //LO
+            task_set.opp_klevel = 1;
             double x = 1 - (load_HI/2);
             for (auto& [key, task] : task_set.get_task_set()) {
-                if(task.C_LO < task.C_HI) { //scale HI task
+                if(task.C_LO < task.C_HI) { 
                     task.tight_D = task.D * x;
-                    
                 }
                 else { 
                     task.tight_D = task.D;
@@ -111,7 +110,7 @@ bool offline_pp(TaskSet& task_set, double t = 500, double ts = 25) {
             }
         }
         else { 
-            return false; //return unschedulable
+            return false;
         }
     }
     return true;

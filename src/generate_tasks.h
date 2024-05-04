@@ -16,7 +16,7 @@ constexpr int MAX_CLO = 25;
 constexpr int MAX_D = 500;
 constexpr int MAX_T = 500;
 
-enum Level { LO, HI }; //Low and High criticality
+enum Level { LO, HI }; 
 
 struct Task {
   int ID, T, C_LO, C_HI, D, tight_D;
@@ -24,12 +24,12 @@ struct Task {
 
   Task() {
     ID = -1;
-    T = 0;          //aka: p, min separation interval between two consecutive releases of task's job or instances
-    C_LO = 0;       //less pessimistic WCET of each job? 
-    C_HI = 0;       //more pessimistic WCET
-    D = 0;          //relative deadline of a job after release
-    tight_D = -1;   //tightened deadline for EDS, virtual deadline for EDF-VD
-    L = Level::LO;  //Level of criticality, xi, LO or HI
+    T = 0;          
+    C_LO = 0;      
+    C_HI = 0; 
+    D = 0; 
+    tight_D = -1;
+    L = Level::LO; 
   }
 
   Task(int ID, int T, int C_LO, int C_HI, int D, int tight_D = -1, Level L = LO)

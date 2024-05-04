@@ -63,7 +63,7 @@ bool is_demand_at_minimum(int T, int C_LO, int D, int ts) {
 
 int find_optimal_tight_D(int T, int C_LO, int previous_tight_D, int ts) {
   for (int n = 0; n <= (ts - 1) / T + 1; ++n) {
-    if (C_LO <= ts - n * T && ts - n * T < previous_tight_D) { //tightened deadline = ts - n * T
+    if (C_LO <= ts - n * T && ts - n * T < previous_tight_D) {
       return ts - n * T;
     }
   }
@@ -74,7 +74,7 @@ int find_optimal_tight_D(int T, int C_LO, int previous_tight_D, int ts) {
 string deadline_search_algorithm(TaskSet& task_set) {
   if (!is_eligible(task_set)) return "Not eligible for deadline-tightening";
 
-  deque<int> candidates = get_best_candidates(task_set); //EDS orders the tasks by greatest margin of C_HI-C_LO
+  deque<int> candidates = get_best_candidates(task_set); 
   int best_candidate = -1;
   auto [t, ts] = get_failure_time(task_set);
 
@@ -92,7 +92,7 @@ string deadline_search_algorithm(TaskSet& task_set) {
     }
 
     task_set.task_set[best_candidate].tight_D = find_optimal_tight_D(T, C_LO, previous_tight_D, ts);
-    if (task_set.task_set[best_candidate].tight_D == previous_tight_D) { //deadline not tightened
+    if (task_set.task_set[best_candidate].tight_D == previous_tight_D) { 
       continue;
     }
 
@@ -117,27 +117,26 @@ string deadline_search_algorithm(TaskSet& task_set) {
 string naive_algorithm(TaskSet& task_set) {
   if (!is_eligible(task_set)) return "Not eligible for deadline-tightening";
 
-  deque<int> candidates = get_hi_candidates(task_set); //Naive selects HI tasks at random
+  deque<int> candidates = get_hi_candidates(task_set); 
   int best_candidate = -1;
-  //auto [t, ts] = get_failure_time(task_set);
 
-  while (!candidates.empty()) { // while there are still tasks
-    best_candidate = candidates.front(); //get the task that arrived first
+  while (!candidates.empty()) { 
+    best_candidate = candidates.front(); 
     candidates.pop_front();
 
-    int C_LO = task_set.task_set[best_candidate].C_LO; //first task execution
-    int previous_tight_D = task_set.task_set[best_candidate].tight_D; //store the first task tightended deadline
+    int C_LO = task_set.task_set[best_candidate].C_LO; 
+    int previous_tight_D = task_set.task_set[best_candidate].tight_D; 
 
-    task_set.task_set[best_candidate].tight_D -= 1; //subtract 1 time unit from the tight deadline
+    task_set.task_set[best_candidate].tight_D -= 1; 
     
-    if (task_set.task_set[best_candidate].tight_D < C_LO) { //if miss deadline
+    if (task_set.task_set[best_candidate].tight_D < C_LO) { 
       task_set.task_set[best_candidate].tight_D = previous_tight_D;
-      continue; //go to the next task
+      continue; 
     }
     
-    if (!schedulability_test_thm2_3(task_set)) { //if it fails theorem 2 & 3 
+    if (!schedulability_test_thm2_3(task_set)) { 
       task_set.task_set[best_candidate].tight_D = previous_tight_D;
-      continue; //go to next task
+      continue; 
     }
 
     auto [t, ts] = get_failure_time(task_set);
@@ -152,7 +151,7 @@ string naive_algorithm(TaskSet& task_set) {
   return "No more eligible candidates";
 }
 
-
+// EDF-VD Algorithm
 string edf_vd_algorithm(TaskSet& task_set) {
   bool can_schedule_offline_pp = offline_pp(task_set, 500, 25);
 
