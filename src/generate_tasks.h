@@ -19,7 +19,7 @@ constexpr int MAX_T = 500;
 enum Level { LO, HI };
 
 struct Task {
-  int ID, T, C_LO, C_HI, D, tight_D;
+  int ID, T, C_LO, C_HI, D, tight_D, priority;
   Level L;
 
   Task() {
@@ -30,13 +30,14 @@ struct Task {
     D = 0;
     tight_D = -1;
     L = Level::LO;
+    priority = -1;
   }
 
-  Task(int ID, int T, int C_LO, int C_HI, int D, int tight_D = -1, Level L = LO)
-    : ID(ID), T(T), C_LO(C_LO), C_HI(C_HI), D(D), tight_D(tight_D == -1 ? D : tight_D), L(C_LO == C_HI ? LO : HI) {}
+  Task(int ID, int T, int C_LO, int C_HI, int D, int tight_D = -1, Level L = LO, int priority = -1)
+    : ID(ID), T(T), C_LO(C_LO), C_HI(C_HI), D(D), tight_D(tight_D == -1 ? D : tight_D), L(C_LO == C_HI ? LO : HI), priority(priority) {}
 
   Task(const Task& other)
-    : ID(other.ID), T(other.T), C_LO(other.C_LO), C_HI(other.C_HI), D(other.D), tight_D(other.tight_D), L(other.L) {}
+    : ID(other.ID), T(other.T), C_LO(other.C_LO), C_HI(other.C_HI), D(other.D), tight_D(other.tight_D), L(other.L), priority(other.priority) {}
 
   Task& operator=(const Task& other) {
     if (this != &other) { 
@@ -47,6 +48,7 @@ struct Task {
       this->D = other.D;
       this->tight_D = other.tight_D;
       this->L = other.L;
+      this->priority = other.priority;
     }
     return *this;
   }
@@ -60,11 +62,12 @@ struct Task {
            this->C_HI == other.C_HI &&
            this->D == other.D &&
            this->tight_D == other.tight_D &&
-           this->L == other.L;
+           this->L == other.L &&
+           this->priority == other.priority;
   }
 
   string task_to_string() const {
-    return "Task(" + to_string(ID) + "," + to_string(T) + "," + to_string(C_LO) + "," + to_string(C_HI) + "," + to_string(D) + "," + to_string(tight_D) + ")";
+    return "Task(" + to_string(ID) + "," + to_string(T) + "," + to_string(C_LO) + "," + to_string(C_HI) + "," + to_string(D) + "," + to_string(tight_D) + "," + to_string(priority) + ")";
   }
 };
 

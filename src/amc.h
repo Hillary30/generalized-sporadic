@@ -5,36 +5,31 @@
 #include <vector>
 #include <algorithm>
 
-#include "generate_amc_task_set.h"
+#include "generate_task_set.h"
 
-bool amc_schedulability_test (const AmcTaskSet& task_set) {
-    return false;
-}
-
-int compute_busy_period_lo (int q, const AmcTaskSet& task_set, int currentKey) {
-    AmcTask currentTask = task_set.get_task_set().at(currentKey);
+int compute_busy_period_lo (int q, const TaskSet& task_set, int currentKey) {
+    Task currentTask = task_set.get_task_set().at(currentKey);
     int busyPeriod = (q+1) * currentTask.C_LO;
-    int sumHigher = 0;
 
     for (int findBp = busyPeriod; findBp <= currentTask.D + (q*currentTask.T); findBp++) {
+        int sumHigher = 0;
 
         for(const auto& [higherPriorityKey, higherPriorityTask] : task_set.get_task_set()) {
             if (higherPriorityTask.priority == -1 && higherPriorityKey != currentKey) {
-                sumHigher += ceil(findBp / higherPriorityTask.T) * higherPriorityTask.C_LO;
+                sumHigher += ceil((float) findBp / higherPriorityTask.T) * higherPriorityTask.C_LO;
             }
         }
 
-        busyPeriod += sumHigher;
-        if (busyPeriod == findBp) {
-            return busyPeriod;
+        if ((busyPeriod + sumHigher) == findBp) {
+            return findBp;
         }
     }
 
     return -1;
 }
 
-int compute_response_time_lo (const AmcTaskSet& task_set, int currentKey, int& lastReleaseLO) {
-    AmcTask currentTask = task_set.get_task_set().at(currentKey);
+int compute_response_time_lo (const TaskSet& task_set, int currentKey, int& lastReleaseLO) {
+    Task currentTask = task_set.get_task_set().at(currentKey);
     vector<int> wcrtJobs;
     int p = 0;
     while (true) {
@@ -57,11 +52,9 @@ int compute_response_time_lo (const AmcTaskSet& task_set, int currentKey, int& l
     }
 }
 
-int compute_busy_period_hi (int q, const AmcTaskSet& task_set, int currentKey, int lastReleaseLO) {
-    AmcTask currentTask = task_set.get_task_set().at(currentKey);
+int compute_busy_period_hi (int q, const TaskSet& task_set, int currentKey, int lastReleaseLO) {
+    Task currentTask = task_set.get_task_set().at(currentKey);
     int busyPeriodHI = (q+1) * currentTask.C_HI;
-    int sumHigherLO = 0;
-    int sumHigherHI = 0;
     int busyPeriodLO = 0;
 
     if (q < lastReleaseLO) {
@@ -71,28 +64,29 @@ int compute_busy_period_hi (int q, const AmcTaskSet& task_set, int currentKey, i
     }
 
     for (int findBp = busyPeriodHI; findBp <= currentTask.D + (q*currentTask.T); findBp++) {
+        int sumHigherLO = 0;
+        int sumHigherHI = 0;
 
         for(const auto& [higherPriorityKey, higherPriorityTask] : task_set.get_task_set()) {
             if (higherPriorityTask.priority == -1 && higherPriorityTask.L == HI && higherPriorityKey != currentKey) {
-                sumHigherHI += ceil(findBp / higherPriorityTask.T) * higherPriorityTask.C_HI;
+                sumHigherHI += ceil((float) findBp / higherPriorityTask.T) * higherPriorityTask.C_HI;
             }
 
             if (higherPriorityTask.priority == -1 && higherPriorityTask.L == LO && higherPriorityKey != currentKey) {
-                sumHigherLO += ceil(busyPeriodLO / higherPriorityTask.T) * higherPriorityTask.C_LO;
+                sumHigherLO += ceil((float) busyPeriodLO / higherPriorityTask.T) * higherPriorityTask.C_LO;
             }
         }
 
-        busyPeriodHI += sumHigherHI + sumHigherLO;
-        if (busyPeriodHI == findBp) {
-            return busyPeriodHI;
+        if ((busyPeriodHI + sumHigherHI + sumHigherLO) == findBp) {
+            return findBp;
         }
     }
 
     return -1;
 }
 
-int compute_response_time_hi (const AmcTaskSet& task_set, int currentKey, int lastReleaseLO) {
-    AmcTask currentTask = task_set.get_task_set().at(currentKey);
+int compute_response_time_hi (const TaskSet& task_set, int currentKey, int lastReleaseLO) {
+    Task currentTask = task_set.get_task_set().at(currentKey);
     vector<int> wcrtJobs;
     int v = 0;
     while (true) {
@@ -112,6 +106,47 @@ int compute_response_time_hi (const AmcTaskSet& task_set, int currentKey, int la
             v += 1;
         }
     }
+}
+
+bool amc_schedulability_test (const TaskSet& task_set, int currentKey) {
+    int lastJobReleased = 0;
+    Task currentTask = task_set.get_task_set().at(currentKey);
+    int responseTimeLO = compute_response_time_lo(task_set, currentKey, lastJobReleased);
+    int responseTimeHI = compute_response_time_hi(task_set, currentKey, lastJobReleased);
+
+    if (responseTimeLO <= currentTask.D && responseTimeHI <= currentTask.D && responseTimeLO != -1 && responseTimeHI != -1) {
+        return true;
+    }
+    return false;
+}
+
+bool audsleys_optimal_priorirty_assignment (TaskSet& task_set) {
+    int n = task_set.get_num_tasks();
+    bool failed = false;
+    // bool finished;
+    while (n != 1 && failed != true) {
+        failed = true;
+        // finished = false;
+        for(auto& [key, task] : task_set.get_task_set_ref()) {
+            if (task.priority == -1) {
+                task.priority = n;
+                bool taskScedulable = amc_schedulability_test(task_set, key);
+                if (taskScedulable) {
+                    n -= 1;
+                    failed = false;
+                    // finished = true;
+                    break;
+                } else {
+                    task.priority = -1;
+                }
+            }
+        }
+    }
+
+    if (n == 1) {
+        return true;
+    }
+    return false;
 }
 
 #endif

@@ -168,6 +168,7 @@ public:
   int get_lo_count() const { return this->lo_tasks_list.size(); }
   int get_hi_count() const { return this->hi_tasks_list.size(); }
   map<int, Task> get_task_set() const { return task_set; }
+  map<int, Task>& get_task_set_ref() { return task_set; }
 
 private:
   vector<Task> lo_tasks_list;
