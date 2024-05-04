@@ -67,7 +67,6 @@ int main(int argc, char* argv[]) {
       before_success++;
       after_eds_success++;
       after_naive_success++;
-      //after_edf_vd_success++;
     }
 
     // Enhanced Deadline Search Algorithm
@@ -82,24 +81,22 @@ int main(int argc, char* argv[]) {
     cum_eds_duration += duration.count();
 
     // Naive Algorithm
-    // start_time = chrono::high_resolution_clock::now();
-    // if (is_eligible(task_set_naive)) {
-    //   if (naive_algorithm(task_set_eds) == "Success") {
-    //     after_naive_success++;
-    //   }
-    // } 
-    // end_time = chrono::high_resolution_clock::now();
-    // duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
-    // assert(end_time >= start_time);
-    // cum_naive_duration += static_cast<unsigned long long>(duration.count());
+    start_time = chrono::high_resolution_clock::now();
+    if (is_eligible(task_set_naive)) {
+      if (naive_algorithm(task_set_eds) == "Success") {
+        after_naive_success++;
+      }
+    } 
+    end_time = chrono::high_resolution_clock::now();
+    duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
+    assert(end_time >= start_time);
+    cum_naive_duration += static_cast<unsigned long long>(duration.count());
 
     //EDF-VD
     start_time = chrono::high_resolution_clock::now();
-    //if (is_eligible(task_set_edf_vd)) {
-      if (edf_vd_algorithm(task_set_edf_vd) == "Success") {
-        after_edf_vd_success++;
-      }
-    //}
+    if (edf_vd_algorithm(task_set_edf_vd) == "Success") {
+      after_edf_vd_success++;
+    }
     end_time = chrono::high_resolution_clock::now();
     duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     assert(end_time >= start_time);

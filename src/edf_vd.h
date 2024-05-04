@@ -46,14 +46,14 @@ double sum_load_HI(const TaskSet& task_set, double t, double ts) {
 
 bool schedulability_prop_42(double load_lo, double load_hi) {
     if(load_lo > 1 || load_hi > 1) {
-        return false; //not schedulable
+        return false; 
     }
     return true;
 }
 
 bool schedulability_prop_43(double load, double load_lo, double load_hi) {
     if(load <= (load_lo + load_hi)) {
-        return true; //schedulable
+        return true; 
     }
     return false;
 }
@@ -76,9 +76,9 @@ bool schedulability_lemma_44(double load) {
 
 bool schedulability_lemma_46(double load_lo, double load_hi) {
     if(((load_lo + (load_hi/2)) <= 1) && ((load_lo + load_hi - (load_lo*load_hi/4)) <= 1)){
-        return true; //it is schedulable
+        return true; 
     }
-    return false; //it is unschedulable
+    return false; 
 }
 
 
@@ -88,21 +88,16 @@ bool offline_pp(TaskSet& task_set, double t = 500, double ts = 25) {
     double load_HI = sum_load_HI(task_set, t, ts);
 
     if(is_eligible_edf(load, load_LO, load_HI) == false) {
-        //cout << "Fail is_eligible" << endl;
         return false;
     }
     if(schedulability_lemma_44(load) == true) {
-        task_set.opp_klevel = 2; //HI --> Normal EDF
-        //cout << "TightD == D" << endl;
-        //task_set.set_tightd_eq_deadline();
-        //cout << "K Level 2" << endl;
+        task_set.opp_klevel = 2;
         for (auto& [key, task] : task_set.get_task_set()) {
             task.tight_D = task.D;
         }
     }
     else {
         if(schedulability_lemma_46(load_LO, load_HI) == true) {
-            //cout << "Pass Lemma 46" << endl;
             task_set.opp_klevel = 1; //LO
             double x = 1 - (load_HI/2);
             for (auto& [key, task] : task_set.get_task_set()) {
@@ -115,8 +110,7 @@ bool offline_pp(TaskSet& task_set, double t = 500, double ts = 25) {
                 }
             }
         }
-        else { //if unschedulable
-            //cout << "Fail Lemma 46" << endl;
+        else { 
             return false; //return unschedulable
         }
     }
