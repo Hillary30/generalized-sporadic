@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20240417-1847-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.29.1"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="LAPTOP-6S0BC8K8"
+	OSRelease=" Personal"
+	OSVersion=" (Build 22631)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="14"
+	ProcessorCacheSize="-1"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="20915"
+	TotalPhysicalMemory="8072"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="3904"
+	>
+	<Testing>
+		<StartDateTime>Apr 17 18:58 Central Daylight Time</StartDateTime>
+		<StartTestTime>1713398339</StartTestTime>
+		<TestList>
+			<Test>./test/CMakeTest</Test>
+		</TestList>
+		<Test Status="failed">
+			<Name>CMakeTest</Name>
+			<Path>./test</Path>
+			<FullName>./test/CMakeTest</FullName>
+			<FullCommandLine>C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\test\CMakeTest.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>3.60964</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\test\CMakeTest.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJydWV1v6jgQfc+v8GMqtagE+oV2H2gDpVpaVg3dfSgVMsQF6zo213Zo7/76dRJKk+DY5uYBRHzOmfHM2J6E1z/31xt4TinFdAUuroBEQgrwzlkCih9ApFh9t7zXs/31Bu4JW0BSABDdYs5ogqgCI3mWbmrgm7LqPaKIQ4mmUPwQ3it4fnkC+fVWHWrdQQr5r6liKlRxTf4yoIB/DhJxYpIcoy0iIzzhY2bSLMGAH9hEv37dmUVLMAdP9+gRdhId4SNEQxfJ8AjBqYvg9AjBf7FcRwjFLrpf2CPknyGNWZLdczHwjXYw0RcCr/K10Kfx4GcKyWSTDTNuMtXM2pt0W1BFvQLJJCQnXpXVbWJFSDZPSQ1qIlFQGubTSAF+2xy/jLn7nj7CT7OJEtCamAx/x6iQHGIaIhgTTJEw6x/infz/nQow85TZ64vDKjDlM6NcN1bCdZkZ3g6rE1I3Wiqmz+hnmqGqXtcGtYGvYR7Ek1FDjTfKjNkH4i8bFQht1WkhDmKGQjYAtenP8CFKFO4WChQPU7qUmNFDUQ2o0VMN9nC3MgCPEbbEwsZoNBWlifpq1K0M7yNrqlLgX7jtbdFyjeKUwAUmWP6qelYda015irQuNuOAf6Upgxp+CIlwEi4DVRQ6RykHztIB8LtW6fxn0DGK7jDqnOladqQqUc2t3W1MX3BeYSLIl+s+WTGuzvak5nN1cFefd2tIV6jmuQGp3NGUbZ0xxau1DF20y0jtiqgTHjHFiVoCuU9m7QrUSfxBDAhe4QWxeP2Nc5K9R/JWZUm13DGO1VkjzOoHcLVy7EaeIN4iRR1hVzs6BvB1K6lGHEJMUo6mOEGDT3xw1Fnh2ocDAytkSDwxmZOdTZVJyuCFbu85SGtRK325Kx1bFdTgTsUwxDSebCROICmKP+vDMb1lKY1tgTRR3YJaVzg8HZ0oTjMtopOdV2jJkToIReZvLqKarrihm/xdlWyjdIjAIIyyqnBa5lWs05wV5disainalknr3yPj6IjplOGl/thiJkqXSyTsE9nhgH996bCP5BuQczbqaKd85KRjM9JAcsrJzkv3rGgIKnzBjaMpp8yUkcC/vLw+bEGMnYTaW266ncYupN0ucwc/Foivqq4X9/Inz3bV1fKINqMlQNBIDazUIp3NAsW4TabTKNCxUi0edNw8iLLzOqofTRqAg9CYWYRygKtHlvlVYa7e2UVLMJPod8s24WoT0SrWMCY5Y6Olx2if1XRLx/QuqoDv0OFw/k9Ycy+/1xJpMicMxt54AvLzen/jnTDG5+8c5k+kPdD1Rg9WiFUlsKu0vbve7EUgLmZrTAicTSgKudqXZiFbptnrGzG7x3KULmar/J0Mwf+h+ExsGIcxXs6yeecfcxS/z7dxa90Lrnpg1/F5g88NWkoU94D/5YIvlUNzoR7iToE8BecnJ+APldOTU6B8SiHpgfPWFdgKcO5l+Rv2H8aDUBNE7avEw0QUMH3aml77S7XPnsXsg3qv5f8VDP8nAA5pS3XpwcVlyZpy/+9+FBXuq5Gc3arOqvD4FBDVEKMYLBBhHz3jxD1PkXaj00E09f4HiJe63Q==</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Apr 17 18:59 Central Daylight Time</EndDateTime>
+		<EndTestTime>1713398343</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

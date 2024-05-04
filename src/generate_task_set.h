@@ -10,6 +10,10 @@ public:
   double utilization, t_max;
   bool thm1, thm2, thm3;
 
+  //EDF-VD
+  int opp_klevel = -1;
+
+
   TaskSet() {}
 
   TaskSet(double target_u, double hi_probability = 0.5, int wcet_ratio = 4) {
@@ -20,6 +24,7 @@ public:
     this->thm1 = false;
     this->thm2 = false;
     this->thm3 = false;
+    this->opp_klevel = -1;
 
     while (true) {
       Task task = generate_task(this->num_tasks, hi_probability, wcet_ratio);
@@ -58,7 +63,8 @@ public:
     this->thm3 = thm3;
     this->lo_tasks_list = task_set_dict["lo"];
     this->hi_tasks_list = task_set_dict["hi"]; 
-    
+    this->opp_klevel = -1;
+
     for (Task task : this->lo_tasks_list) {
       this->task_set[task.ID] = task;
     }
@@ -103,7 +109,8 @@ public:
            this->t_max == other.t_max &&
            this->thm1 == other.thm1 &&
            this->thm2 == other.thm2 &&
-           this->thm3 == other.thm3;
+           this->thm3 == other.thm3 &&
+           this->opp_klevel == other.opp_klevel;
   }
 
   double calculate_t_max() {
@@ -119,12 +126,12 @@ public:
 
     for(auto const&[key, task]: task_set) {
       
-      if (task.L == Level::LO) { // Calculate the sum of C_LO / T for all tasks with level LO
+      if (task.L == Level::LO) { 
         lo_utilization += task.C_LO / static_cast<double>(task.T);
       }
 
       
-      if (task.L == Level::HI) { // Calculate the sum of C_HI / T for all tasks with level HI
+      if (task.L == Level::HI) {
         hi_utilization += task.C_HI / static_cast<double>(task.T);
       }
     }
@@ -135,6 +142,12 @@ public:
   void constrain_deadlines() {
     for (auto& [key, task] : task_set) {
       if (task.T < task.D) task.D = task.T;
+    }
+  }
+
+  void set_tightd_eq_deadline() {
+    for(auto& [key, task] : task_set) {
+      task.tight_D = task.D;
     }
   }
 
@@ -166,8 +179,11 @@ public:
   bool get_thm2() const { return thm2; }
   bool get_thm3() const { return thm3; }
   int get_lo_count() const { return this->lo_tasks_list.size(); }
+  vector<Task> get_lo_tasks_list() const { return lo_tasks_list; }
   int get_hi_count() const { return this->hi_tasks_list.size(); }
+  vector<Task> get_hi_tasks_list() const { return hi_tasks_list; }
   map<int, Task> get_task_set() const { return task_set; }
+  map<int, Task>& get_task_set_ref() { return task_set; }
 
 private:
   vector<Task> lo_tasks_list;
@@ -194,23 +210,23 @@ private:
     int maxD = 0;
 
     for(auto const&[key, task]: task_set) {
-      l = lcm(l, task.T); // Calculate the LCM of all T values
+      l = lcm(l, task.T); 
 
-      if (task.D > maxD) maxD = task.D; // Find the maximum D value
+      if (task.D > maxD) maxD = task.D; 
     }
 
     return static_cast<double>(l + maxD);
   }
 
-  double U_maxTD() {
+  double U_maxTD() { 
     double maxTD = 0;
 
-    for(auto const&[key, task]: task_set) { // Calculate the maximum T - D value
+    for(auto const&[key, task]: task_set) { 
       double currentTD = static_cast<double>(task.T - task.D); 
       if (currentTD > maxTD) maxTD = currentTD; 
     }
 
-    return floor(utilization / (1 - utilization) * maxTD);
+    return floor(utilization / (1 - utilization) * maxTD); 
   }
 
   string thm_to_string(bool thm_result) {
