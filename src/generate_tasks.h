@@ -22,10 +22,6 @@ struct Task {
   int ID, T, C_LO, C_HI, D, tight_D;
   Level L;
 
-  int virtual_deadline;
-  int absolute_deadline;
-  int arrival_time;
-
   Task() {
     ID = -1;
     T = 0;          //aka: p, min separation interval between two consecutive releases of task's job or instances
@@ -34,16 +30,13 @@ struct Task {
     D = 0;          //relative deadline of a job after release
     tight_D = -1;   //tightened deadline for EDS, virtual deadline for EDF-VD
     L = Level::LO;  //Level of criticality, xi, LO or HI
-    virtual_deadline = 0;
-    absolute_deadline = 0;
-    arrival_time = 0;
   }
 
-  Task(int ID, int T, int C_LO, int C_HI, int D, int tight_D = -1, Level L = LO, int virtual_deadline = 0, int absolute_deadline = 0, int arrival_time = 0)
-    : ID(ID), T(T), C_LO(C_LO), C_HI(C_HI), D(D), tight_D(tight_D == -1 ? D : tight_D), L(C_LO == C_HI ? LO : HI), virtual_deadline(virtual_deadline), absolute_deadline(absolute_deadline), arrival_time(arrival_time) {}
+  Task(int ID, int T, int C_LO, int C_HI, int D, int tight_D = -1, Level L = LO)
+    : ID(ID), T(T), C_LO(C_LO), C_HI(C_HI), D(D), tight_D(tight_D == -1 ? D : tight_D), L(C_LO == C_HI ? LO : HI) {}
 
   Task(const Task& other)
-    : ID(other.ID), T(other.T), C_LO(other.C_LO), C_HI(other.C_HI), D(other.D), tight_D(other.tight_D), L(other.L), virtual_deadline(other.virtual_deadline), absolute_deadline(other.absolute_deadline), arrival_time(other.arrival_time) {}
+    : ID(other.ID), T(other.T), C_LO(other.C_LO), C_HI(other.C_HI), D(other.D), tight_D(other.tight_D), L(other.L) {}
 
   Task& operator=(const Task& other) {
     if (this != &other) { 
@@ -54,9 +47,6 @@ struct Task {
       this->D = other.D;
       this->tight_D = other.tight_D;
       this->L = other.L;
-      this->virtual_deadline = other.virtual_deadline;
-      this->absolute_deadline = other.absolute_deadline;
-      this->arrival_time = other.arrival_time;
     }
     return *this;
   }
@@ -70,10 +60,7 @@ struct Task {
            this->C_HI == other.C_HI &&
            this->D == other.D &&
            this->tight_D == other.tight_D &&
-           this->L == other.L &&
-           this->virtual_deadline == other.virtual_deadline &&
-           this->absolute_deadline == other.absolute_deadline &&
-           this->arrival_time == other.arrival_time;
+           this->L == other.L;
   }
 
   string task_to_string() const {
@@ -130,7 +117,7 @@ Task generate_task(int ID = -1, double hi_probability = 0.5, double wcet_ratio =
   auto D = generate_D(C_HI);
   auto T = generate_T(C_HI);
 
-  return Task(ID, T, C_LO, C_HI, D, -1, L, 0, 0, 0);
+  return Task(ID, T, C_LO, C_HI, D, -1, L);
 }
 
 #endif
