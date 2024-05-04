@@ -4,7 +4,6 @@
 #include <gtest/gtest.h>
 
 #include "../src/ekberg.h"
-//#include "../ekberg.h"
 
 TEST(Ekberg, Task1) {
   Task task1 = Task(0, 5, 2, 2, 4);

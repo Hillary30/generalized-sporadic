@@ -4,8 +4,6 @@
 #include <gtest/gtest.h>
 
 #include "../src/schedulability.h"
-//#include "../schedulability.h"
-
 
 /* TEST SCHEDULABILITY FUNCTIONS */
 

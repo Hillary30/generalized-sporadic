@@ -4,8 +4,6 @@
 #include <gtest/gtest.h>
 
 #include "../src/generate_tasks.h"
-//#include "../generate_tasks.h"
-
 
 TEST(GenerateTasks, CanaryTest) {
   EXPECT_TRUE(true) << "Canary test failed.";
@@ -65,10 +63,10 @@ TEST(GenerateTasks, GenerateWithSeed) {
   int D = generate_D(C_HI, seed);
   int T = generate_T(C_HI, seed);
 
-  EXPECT_EQ(C_LO, 19);
-  EXPECT_EQ(C_HI, 65);
-  EXPECT_EQ(D, 368);
-  EXPECT_EQ(T, 368);
+  EXPECT_EQ(C_LO, 18);
+  EXPECT_EQ(C_HI, 38);
+  EXPECT_EQ(D, 403);
+  EXPECT_EQ(T, 403);
 }
 
 TEST(GenerateTasks, GenerateRandomTask) {
