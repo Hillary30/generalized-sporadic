@@ -1,0 +1,10 @@
+^C:\USERS\HILLA\ONEDRIVE\DOCUMENTS\GITHUB\GENERALIZED-SPORADIC\BUILD\CMAKEFILES\A0EB3F8181FDFABA38285CD751EAEB50\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\cmake-3.29.1-windows-x86_64\bin\cmake.exe" -SC:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic -BC:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/hilla/OneDrive/Documents/GitHub/generalized-sporadic/build/CMakeHigh.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
