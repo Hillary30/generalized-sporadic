@@ -21,14 +21,42 @@
 	TotalVirtualMemory="21328"
 	TotalPhysicalMemory="8016"
 	LogicalProcessorsPerPhysical="1"
-	ProcessorClockFrequency="2496"
+	ProcessorClockFrequency="2500"
 	>
 	<Testing>
-		<StartDateTime>May 04 19:00 Central Daylight Time</StartDateTime>
-		<StartTestTime>1714867201</StartTestTime>
-		<TestList/>
-		<EndDateTime>May 04 19:00 Central Daylight Time</EndDateTime>
-		<EndTestTime>1714867201</EndTestTime>
+		<StartDateTime>May 04 19:10 Central Daylight Time</StartDateTime>
+		<StartTestTime>1714867848</StartTestTime>
+		<TestList>
+			<Test>./test/CMakeTest</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>CMakeTest</Name>
+			<Path>./test</Path>
+			<FullName>./test/CMakeTest</FullName>
+			<FullCommandLine>C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\test\Debug\CMakeTest.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>10.3183</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\build\test\Debug\CMakeTest.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyVlEFPgzAUx+98infcDiNzWaIePCybGYmLJIjxQDh04200Qot9Bd23t0CGzEQs70La/t7vkYY/0UNXMQSlEFyc4HYOGkkTHJXM4a5ZAJXcPF0nmnUVwzaTe5a1AIqKKylyFAZGPSuLX/B937pFgYppDBm9kxNB8PoMTcXXR+6aCabOoek0VFv+0wAFkznkNB1S7rDCzOO+2skhZw+DyeI/6WW1Hpb2MIs37WiPW0k9PkK6sVFuRghDG2E4QvjGdfqCmNh4L+wIfcBEIvN6z2bAD20xYkXET00WViJ5/ChZ5hf1sVRDo/7u6kbaBar9XkFLzbKpc9217He5rglpmHKCgikN8gg6xTbPstRFqeGTESjMZWWulrg4IHCT9a+DuWpq4VQhpTJL6u6b+WIJ+3P9p4idb5NsXqg=</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>May 04 19:10 Central Daylight Time</EndDateTime>
+		<EndTestTime>1714867858</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>
