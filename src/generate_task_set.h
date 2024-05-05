@@ -10,6 +10,8 @@ public:
   double utilization, t_max;
   bool thm1, thm2, thm3;
 
+  int opp_klevel = -1;
+
   TaskSet() {}
 
   TaskSet(double target_u, double hi_probability = 0.5, int wcet_ratio = 4) {
@@ -20,6 +22,7 @@ public:
     this->thm1 = false;
     this->thm2 = false;
     this->thm3 = false;
+    this->opp_klevel = -1;
 
     while (true) {
       Task task = generate_task(this->num_tasks, hi_probability, wcet_ratio);
@@ -58,6 +61,7 @@ public:
     this->thm3 = thm3;
     this->lo_tasks_list = task_set_dict["lo"];
     this->hi_tasks_list = task_set_dict["hi"]; 
+    this->opp_klevel = -1;
     
     for (Task task : this->lo_tasks_list) {
       this->task_set[task.ID] = task;
@@ -103,7 +107,8 @@ public:
            this->t_max == other.t_max &&
            this->thm1 == other.thm1 &&
            this->thm2 == other.thm2 &&
-           this->thm3 == other.thm3;
+           this->thm3 == other.thm3 &&
+           this->opp_klevel == other.opp_klevel;
   }
 
   double calculate_t_max() {
@@ -135,6 +140,12 @@ public:
   void constrain_deadlines() {
     for (auto& [key, task] : task_set) {
       if (task.T < task.D) task.D = task.T;
+    }
+  }
+
+   void set_tightd_eq_deadline() {
+    for(auto& [key, task] : task_set) {
+      task.tight_D = task.D;
     }
   }
 
