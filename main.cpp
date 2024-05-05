@@ -5,6 +5,7 @@
 
 #include "./src/search_algorithm.h"
 //#include "search_algorithm.h"
+#include "./src/amc.h"
 
 void create_csv_file(string filename) {
   ifstream file_check(filename);
@@ -13,7 +14,8 @@ void create_csv_file(string filename) {
     std::ofstream file_create(filename);
         
     if (file_create.is_open()) {
-      file_create << "utilization,num_tasks,before_success_count,eds_success_count,eds_cum_duration,naive_success_count,naive_cum_duration,edf_vd_success_count,edf_vd_cum_duration" << endl;
+      //file_create << "utilization,num_tasks,before_success_count,eds_success_count,eds_cum_duration,naive_success_count,naive_cum_duration,edf_vd_success_count,edf_vd_cum_duration" << endl;
+      file_create << "utilization,num_tasks,before_success_count,eds_success_count,eds_cum_duration,edf_vd_success_count,edf_vd_cum_duration,amc_success_count,amc_cum_duration" << endl;
       file_create.close();
     } else return;
   } else {
@@ -47,26 +49,27 @@ int main(int argc, char* argv[]) {
   int count = stoi(argv[1]);
   double utilization = stod(argv[2]) / 1000;
   cout << to_string(count) << " " << to_string(utilization) << endl;
-  int before_success = 0, after_eds_success = 0, after_naive_success = 0, after_edf_vd_success = 0;
+  int before_success = 0, after_eds_success = 0, after_edf_vd_success = 0, after_amc_success = 0;
   vector<int> result;
   int cum_duration = 0, cum_duration2 = 0; 
-  unsigned long long cum_eds_duration = 0, cum_naive_duration = 0, cum_edf_vd_duration = 0;
+  unsigned long long cum_eds_duration = 0, cum_edf_vd_duration = 0, cum_amc_duration = 0;
 
   for (int i = 0; i < count; ++i) {
     TaskSet task_set_eds = TaskSet(utilization);
     task_set_eds.set_thm1(schedulability_test_thm1_parallel(task_set_eds));
     task_set_eds.set_thm2(schedulability_test_thm2(task_set_eds));
     task_set_eds.set_thm3(schedulability_test_thm3(task_set_eds));
-    TaskSet task_set_naive = task_set_eds;
+    //  TaskSet task_set_naive = task_set_eds;
     TaskSet task_set_edf_vd = task_set_eds;
-    assert(&task_set_eds != &task_set_naive);
+    TaskSet task_set_amc = task_set_eds;
+    assert(&task_set_eds != &task_set_amc);
     assert(&task_set_eds != &task_set_edf_vd);
-    assert(&task_set_edf_vd != &task_set_naive);
+    assert(&task_set_edf_vd != &task_set_amc);
 
     if (task_set_eds.get_thm1() && task_set_eds.get_thm2() && task_set_eds.get_thm3()) {
       before_success++;
       after_eds_success++;
-      after_naive_success++;
+      // after_naive_success++;
     }
 
     // Enhanced Deadline Search Algorithm
@@ -91,16 +94,26 @@ int main(int argc, char* argv[]) {
     cum_edf_vd_duration += static_cast<unsigned long long>(duration.count());
 
     // Naive Algorithm
+    // start_time = chrono::high_resolution_clock::now();
+    // if (is_eligible(task_set_naive)) {
+    //   if (naive_algorithm(task_set_eds) == "Success") {
+    //     after_naive_success++;
+    //   }
+    // } 
+    // end_time = chrono::high_resolution_clock::now();
+    // duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
+    // assert(end_time >= start_time);
+    // cum_naive_duration += static_cast<unsigned long long>(duration.count());
+
+    // AMC
     start_time = chrono::high_resolution_clock::now();
-    if (is_eligible(task_set_naive)) {
-      if (naive_algorithm(task_set_eds) == "Success") {
-        after_naive_success++;
-      }
-    } 
+    if (audsleys_optimal_priorirty_assignment(task_set_amc)) {
+      after_amc_success++;
+    }
     end_time = chrono::high_resolution_clock::now();
     duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     assert(end_time >= start_time);
-    cum_naive_duration += static_cast<unsigned long long>(duration.count());
+    cum_amc_duration += static_cast<unsigned long long>(duration.count());
   }
 
   result.push_back(static_cast<int>(utilization * 1000));
@@ -108,10 +121,12 @@ int main(int argc, char* argv[]) {
   result.push_back(before_success);
   result.push_back(after_eds_success);
   result.push_back(cum_eds_duration);
-  result.push_back(after_naive_success);
-  result.push_back(cum_naive_duration);
+  // result.push_back(after_naive_success);
+  // result.push_back(cum_naive_duration);
   result.push_back(after_edf_vd_success);
   result.push_back(cum_edf_vd_duration);
+  result.push_back(after_amc_success);
+  result.push_back(cum_amc_duration);
 
   string filename = "experiment.csv";
 
