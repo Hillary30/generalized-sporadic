@@ -12,7 +12,7 @@ void create_csv_file(string filename) {
     std::ofstream file_create(filename);
         
     if (file_create.is_open()) {
-      file_create << "utilization,num_tasks,before_success_count,eds_success_count,eds_cum_duration,naive_success_count,naive_cum_duration" << endl;
+      file_create << "utilization,num_tasks,before_success_count,eds_success_count,eds_cum_duration,naive_success_count,naive_cum_duration,edf_success_count,edf_cum" << endl;
       file_create.close();
     } else return;
   } else {
@@ -46,10 +46,10 @@ int main(int argc, char* argv[]) {
   int count = stoi(argv[1]);
   double utilization = stod(argv[2]) / 1000;
   cout << to_string(count) << " " << to_string(utilization) << endl;
-  int before_success = 0, after_eds_success = 0, after_naive_success = 0;
+  int before_success = 0, after_eds_success = 0, after_naive_success = 0, after_edf_vd_success = 0;
   vector<int> result;
   int cum_duration = 0, cum_duration2 = 0; 
-  unsigned long long cum_eds_duration = 0, cum_naive_duration = 0;
+  unsigned long long cum_eds_duration = 0, cum_naive_duration = 0, cum_edf_vd_duration = 0;
 
   for (int i = 0; i < count; ++i) {
     TaskSet task_set_eds = TaskSet(utilization);
@@ -57,7 +57,10 @@ int main(int argc, char* argv[]) {
     task_set_eds.set_thm2(schedulability_test_thm2(task_set_eds));
     task_set_eds.set_thm3(schedulability_test_thm3(task_set_eds));
     TaskSet task_set_naive = task_set_eds;
+    TaskSet task_set_edf_vd = task_set_eds;
     assert(&task_set_eds != &task_set_naive);
+    assert(&task_set_eds != &task_set_edf_vd);
+    assert(&task_set_edf_vd != &task_set_naive);
 
     if (task_set_eds.get_thm1() && task_set_eds.get_thm2() && task_set_eds.get_thm3()) {
       before_success++;
@@ -87,6 +90,16 @@ int main(int argc, char* argv[]) {
     duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     assert(end_time >= start_time);
     cum_naive_duration += static_cast<unsigned long long>(duration.count());
+
+    //EDF-VD
+    start_time = chrono::high_resolution_clock::now();
+    if (edf_vd_algorithm(task_set_edf_vd) == "Success") { 
+      after_edf_vd_success++;
+    }
+    end_time = chrono::high_resolution_clock::now();
+    duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
+    assert(end_time >= start_time);
+    cum_edf_vd_duration += static_cast<unsigned long long>(duration.count());
   }
 
   result.push_back(static_cast<int>(utilization * 1000));
@@ -96,6 +109,8 @@ int main(int argc, char* argv[]) {
   result.push_back(cum_eds_duration);
   result.push_back(after_naive_success);
   result.push_back(cum_naive_duration);
+  result.push_back(after_edf_vd_success);
+  result.push_back(cum_edf_vd_duration);
 
   string filename = "experiment.csv";
 

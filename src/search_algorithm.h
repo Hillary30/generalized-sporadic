@@ -6,6 +6,7 @@
 #include <string>
 
 #include "schedulability.h"
+#include "edf_vd.h"
 
 bool is_eligible(TaskSet& task_set) {
   return !task_set.get_thm1() && task_set.get_thm2() && task_set.get_thm3();
@@ -144,6 +145,19 @@ string naive_algorithm(TaskSet& task_set) {
   }
 
   return "No more eligible candidates";
+}
+
+string edf_vd_algorithm(TaskSet& task_set) {
+  bool can_schedule_offline_pp = offline_pp(task_set, 500, 0);
+
+  if(can_schedule_offline_pp == true) {
+    return "Success";
+  }
+  else if(can_schedule_offline_pp == false) {
+    return "Not eligible for deadline-tightening";
+  }
+
+  return "Fail";
 }
 
 #endif
