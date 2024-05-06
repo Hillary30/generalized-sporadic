@@ -109,7 +109,7 @@ int compute_response_time_hi (const TaskSet& task_set, int currentKey, int lastR
 }
 
 bool amc_schedulability_test (const TaskSet& task_set, int currentKey) {
-    int lastJobReleased = 0;
+    int lastJobReleased;
     Task currentTask = task_set.get_task_set().at(currentKey);
     int responseTimeLO = compute_response_time_lo(task_set, currentKey, lastJobReleased);
     int responseTimeHI = compute_response_time_hi(task_set, currentKey, lastJobReleased);
@@ -121,29 +121,29 @@ bool amc_schedulability_test (const TaskSet& task_set, int currentKey) {
 }
 
 bool audsleys_optimal_priorirty_assignment (TaskSet& task_set) {
-    int n = task_set.get_num_tasks();
+    map<int, Task> ordered_task_set;
     bool failed = false;
-    // bool finished;
-    while (n != 1 && failed != true) {
+
+    int numUnorderedTasks = task_set.get_task_set_ref().size();
+    while (numUnorderedTasks != 0 && failed != true) {
         failed = true;
-        // finished = false;
         for(auto& [key, task] : task_set.get_task_set_ref()) {
-            if (task.priority == -1) {
-                task.priority = n;
-                bool taskScedulable = amc_schedulability_test(task_set, key);
-                if (taskScedulable) {
-                    n -= 1;
-                    failed = false;
-                    // finished = true;
-                    break;
-                } else {
-                    task.priority = -1;
-                }
+            task.priority = numUnorderedTasks;
+            bool taskScedulable = amc_schedulability_test(task_set, key);
+            if (taskScedulable) {
+                ordered_task_set.insert({key, std::move(task)});
+                task_set.get_task_set_ref().erase(key);
+                numUnorderedTasks = task_set.get_task_set_ref().size();
+                failed = false;
+                break;
+            } else {
+                task.priority = -1;
             }
         }
     }
 
-    if (n == 1) {
+    if (task_set.get_task_set_ref().size() == 0) {
+        task_set.task_set = ordered_task_set;
         return true;
     }
     return false;
