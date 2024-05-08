@@ -148,7 +148,7 @@ string naive_algorithm(TaskSet& task_set) {
 }
 
 string edf_vd_algorithm(TaskSet& task_set) {
-  bool can_schedule_offline_pp = offline_pp(task_set, 500, 0);
+  bool can_schedule_offline_pp = offline_pp(task_set, task_set.get_t_max(), 0);
 
   if(can_schedule_offline_pp == true) {
     return "Success";
