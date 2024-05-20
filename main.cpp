@@ -107,14 +107,14 @@ int main(int argc, char* argv[]) {
     cum_edf_vd_duration += static_cast<unsigned long long>(duration.count());
 
     // AMC
-    // start_time = chrono::high_resolution_clock::now();
-    // if (audsleys_optimal_priorirty_assignment(task_set_amc)) {
-    //   after_amc_success++;
-    // }
-    // end_time = chrono::high_resolution_clock::now();
-    // duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
-    // assert(end_time >= start_time);
-    // cum_amc_duration += static_cast<unsigned long long>(duration.count());
+    start_time = chrono::high_resolution_clock::now();
+    if (audsleys_optimal_priorirty_assignment(task_set_amc)) {
+      after_amc_success++;
+    }
+    end_time = chrono::high_resolution_clock::now();
+    duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
+    assert(end_time >= start_time);
+    cum_amc_duration += static_cast<unsigned long long>(duration.count());
   }
 
   result.push_back(static_cast<int>(utilization * 1000));
