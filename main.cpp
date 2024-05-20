@@ -66,13 +66,16 @@ int main(int argc, char* argv[]) {
 
     if (task_set_eds.get_thm1() && task_set_eds.get_thm2() && task_set_eds.get_thm3()) {
       before_success++;
-      after_eds_success++;
+      //after_eds_success++;
       // after_naive_success++;
     }
 
     // Enhanced Deadline Search Algorithm
     auto start_time = chrono::high_resolution_clock::now();
-    if (is_eligible(task_set_eds)) {
+    if (task_set_eds.get_thm1() && task_set_eds.get_thm2() && task_set_eds.get_thm3()) {
+      after_eds_success++;
+    }
+    else{
       if (deadline_search_algorithm(task_set_eds) == "Success") {
         after_eds_success++;
       }
@@ -104,14 +107,14 @@ int main(int argc, char* argv[]) {
     cum_edf_vd_duration += static_cast<unsigned long long>(duration.count());
 
     // AMC
-    start_time = chrono::high_resolution_clock::now();
-    if (audsleys_optimal_priorirty_assignment(task_set_amc)) {
-      after_amc_success++;
-    }
-    end_time = chrono::high_resolution_clock::now();
-    duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
-    assert(end_time >= start_time);
-    cum_amc_duration += static_cast<unsigned long long>(duration.count());
+    // start_time = chrono::high_resolution_clock::now();
+    // if (audsleys_optimal_priorirty_assignment(task_set_amc)) {
+    //   after_amc_success++;
+    // }
+    // end_time = chrono::high_resolution_clock::now();
+    // duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
+    // assert(end_time >= start_time);
+    // cum_amc_duration += static_cast<unsigned long long>(duration.count());
   }
 
   result.push_back(static_cast<int>(utilization * 1000));
