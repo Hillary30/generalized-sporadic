@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\src\search_algorithm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\hilla\OneDrive\Documents\GitHub\generalized-sporadic\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{F6F28C41-1F2E-39A1-BC6D-F76B27DE8991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{EF4ABF2A-ED7E-345E-A58D-7991F7A69A66}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -14,8 +14,8 @@ void create_csv_file(string filename) {
     std::ofstream file_create(filename);
         
     if (file_create.is_open()) {
-      //file_create << "utilization,num_tasks,before_success_count,eds_success_count,eds_cum_duration,naive_success_count,naive_cum_duration,edf_vd_success_count,edf_vd_cum_duration" << endl;
       file_create << "utilization,num_tasks,before_success_count,eds_success_count,eds_cum_duration,edf_vd_success_count,edf_vd_cum_duration,amc_success_count,amc_cum_duration" << endl;
+      //file_create << "utilization,num_tasks,before_success_count,eds_success_count,eds_cum_duration,naive_success_count,naive_cum_duration,edf_success_count,edf_cum" << endl;
       file_create.close();
     } else return;
   } else {
@@ -68,13 +68,16 @@ int main(int argc, char* argv[]) {
 
     if (task_set_eds.get_thm1() && task_set_eds.get_thm2() && task_set_eds.get_thm3()) {
       before_success++;
-      after_eds_success++;
+      //after_eds_success++;
       // after_naive_success++;
     }
 
     // Enhanced Deadline Search Algorithm
     auto start_time = chrono::high_resolution_clock::now();
-    if (is_eligible(task_set_eds)) {
+    if (task_set_eds.get_thm1() && task_set_eds.get_thm2() && task_set_eds.get_thm3()) {
+      after_eds_success++;
+    }
+    else{
       if (deadline_search_algorithm(task_set_eds) == "Success") {
         after_eds_success++;
       }
@@ -82,16 +85,6 @@ int main(int argc, char* argv[]) {
     auto end_time = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     cum_eds_duration += duration.count();
-
-    //EDF-VD
-    start_time = chrono::high_resolution_clock::now();
-    if (edf_vd_algorithm(task_set_edf_vd) == "Success") {
-      after_edf_vd_success++;
-    }
-    end_time = chrono::high_resolution_clock::now();
-    duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
-    assert(end_time >= start_time);
-    cum_edf_vd_duration += static_cast<unsigned long long>(duration.count());
 
     // Naive Algorithm
     // start_time = chrono::high_resolution_clock::now();
@@ -104,6 +97,16 @@ int main(int argc, char* argv[]) {
     // duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     // assert(end_time >= start_time);
     // cum_naive_duration += static_cast<unsigned long long>(duration.count());
+
+    //EDF-VD
+    start_time = chrono::high_resolution_clock::now();
+    if (edf_vd_algorithm(task_set_edf_vd) == "Success") { 
+      after_edf_vd_success++;
+    }
+    end_time = chrono::high_resolution_clock::now();
+    duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
+    assert(end_time >= start_time);
+    cum_edf_vd_duration += static_cast<unsigned long long>(duration.count());
 
     // AMC
     start_time = chrono::high_resolution_clock::now();

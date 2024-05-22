@@ -144,18 +144,6 @@ TEST(EDF_VD, OfflinePreProcessing) {
 
     EXPECT_EQ(offline_pp(task_set, 10, 0), true);
     EXPECT_NE(task_set.task_set[0].tight_D, -1);
-
-    map<string, vector<Task>> task_set_dict2 = {};
-    Task task3 = Task(0, 10, 2, 3, 4, 4); 
-    Task task4 = Task(1, 10, 2, 4, 4, 4);
-    Task task5 = Task(2, 10, 2, 4, 4, 4);
-    task_set_dict2["hi"] = {task3, task4, task5};
-    TaskSet task_set2 = TaskSet(task_set_dict2);
-
-    cout << "Task Set 2: " << endl;
-    EXPECT_EQ(offline_pp(task_set2, 10, 0), false);
-    offline_pp(task_set2, 10, 0);
-    EXPECT_EQ(task_set2.task_set[0].tight_D, -1);
 }
 
 

@@ -1,8 +1,7 @@
 #ifndef SCHEDULABILITY_H
 #define SCHEDULABILITY_H
 
-#include "/opt/homebrew/Cellar/libomp/18.1.4/include/omp.h"
-
+//#include "/opt/homebrew/Cellar/libomp/18.1.4/include/omp.h"
 
 #include "dbfs.h"
 
@@ -32,12 +31,12 @@ bool schedulability_test_thm1_parallel(TaskSet& task_set) {
   return is_schedulable;
 }
 
-bool schedulability_test_thm1(TaskSet& task_set) { 
+bool schedulability_test_thm1(TaskSet& task_set) {
   if (task_set.get_t_max() == 0) return false;
 
   for (int i = 2; i < task_set.get_t_max() + 1; ++i) {
     for (int j = 1; j < i; ++j) {
-      if (sum_dbf(task_set, i, j) > i) { 
+      if (sum_dbf(task_set, i, j) > i) {
         return false;
       }
     }
@@ -48,7 +47,7 @@ bool schedulability_test_thm1(TaskSet& task_set) {
 bool schedulability_test_thm2(TaskSet& task_set) {
   if (task_set.get_t_max() == 0) return false;
 
-  for (int i = 1; i < task_set.get_t_max() + 1; ++i) { 
+  for (int i = 1; i < task_set.get_t_max() + 1; ++i) {
     if (sum_dbf_LO(task_set, i) > i) {
       return false;
     }

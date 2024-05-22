@@ -4,8 +4,6 @@
 #include <gtest/gtest.h>
 
 #include "../src/generate_tasks.h"
-//#include "../generate_tasks.h"
-
 
 TEST(GenerateTasks, CanaryTest) {
   EXPECT_TRUE(true) << "Canary test failed.";

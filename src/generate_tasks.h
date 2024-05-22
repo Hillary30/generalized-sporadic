@@ -16,7 +16,7 @@ constexpr int MAX_CLO = 25;
 constexpr int MAX_D = 500;
 constexpr int MAX_T = 500;
 
-enum Level { LO, HI }; 
+enum Level { LO, HI };
 
 struct Task {
   int ID, T, C_LO, C_HI, D, tight_D, priority;
@@ -24,10 +24,10 @@ struct Task {
 
   Task() {
     ID = -1;
-    T = 0;          
-    C_LO = 0;      
-    C_HI = 0; 
-    D = 0; 
+    T = 0;
+    C_LO = 0;
+    C_HI = 0;
+    D = 0;
     tight_D = -1;
     L = Level::LO;
     priority = -1;

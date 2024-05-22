@@ -11,7 +11,7 @@ int compute_busy_period_lo (int q, const TaskSet& task_set, int currentKey) {
     Task currentTask = task_set.get_task_set().at(currentKey);
     int busyPeriod = (q+1) * currentTask.C_LO;
 
-    for (int findBp = busyPeriod; findBp <= currentTask.D + (q*currentTask.T); findBp++) {
+    for (int findBp = 0; findBp <= currentTask.D + (q*currentTask.T); findBp++) {
         int sumHigher = 0;
 
         for(const auto& [higherPriorityKey, higherPriorityTask] : task_set.get_task_set()) {
@@ -63,7 +63,7 @@ int compute_busy_period_hi (int q, const TaskSet& task_set, int currentKey, int 
         busyPeriodLO = compute_busy_period_lo(lastReleaseLO, task_set, currentKey);
     }
 
-    for (int findBp = busyPeriodHI; findBp <= currentTask.D + (q*currentTask.T); findBp++) {
+    for (int findBp = 0; findBp <= currentTask.D + (q*currentTask.T); findBp++) {
         int sumHigherLO = 0;
         int sumHigherHI = 0;
 
@@ -109,10 +109,14 @@ int compute_response_time_hi (const TaskSet& task_set, int currentKey, int lastR
 }
 
 bool amc_schedulability_test (const TaskSet& task_set, int currentKey) {
-    int lastJobReleased = 0;
+    int lastJobReleased;
+    int responseTimeHI = 0;
     Task currentTask = task_set.get_task_set().at(currentKey);
+
     int responseTimeLO = compute_response_time_lo(task_set, currentKey, lastJobReleased);
-    int responseTimeHI = compute_response_time_hi(task_set, currentKey, lastJobReleased);
+    if (currentTask.L == HI) {
+        responseTimeHI = compute_response_time_hi(task_set, currentKey, lastJobReleased);
+    }
 
     if (responseTimeLO <= currentTask.D && responseTimeHI <= currentTask.D && responseTimeLO != -1 && responseTimeHI != -1) {
         return true;
@@ -121,54 +125,32 @@ bool amc_schedulability_test (const TaskSet& task_set, int currentKey) {
 }
 
 bool audsleys_optimal_priorirty_assignment (TaskSet& task_set) {
-    int n = task_set.get_num_tasks();
+    map<int, Task> ordered_task_set;
     bool failed = false;
-    // bool finished;
-    while (n != 1 && failed != true) {
+
+    int numUnorderedTasks = task_set.get_task_set_ref().size();
+    while (numUnorderedTasks != 0 && failed != true) {
         failed = true;
-        // finished = false;
         for(auto& [key, task] : task_set.get_task_set_ref()) {
-            if (task.priority == -1) {
-                task.priority = n;
-                bool taskScedulable = amc_schedulability_test(task_set, key);
-                if (taskScedulable) {
-                    n -= 1;
-                    failed = false;
-                    // finished = true;
-                    break;
-                } else {
-                    task.priority = -1;
-                }
+            task.priority = numUnorderedTasks;
+            bool taskScedulable = amc_schedulability_test(task_set, key);
+            if (taskScedulable) {
+                ordered_task_set.insert({key, std::move(task)});
+                task_set.get_task_set_ref().erase(key);
+                numUnorderedTasks = task_set.get_task_set_ref().size();
+                failed = false;
+                break;
+            } else {
+                task.priority = -1;
             }
         }
     }
 
-    if (n == 1) {
+    if (task_set.get_task_set_ref().size() == 0) {
+        task_set.task_set = ordered_task_set;
         return true;
     }
     return false;
 }
 
 #endif
-
-// Audsley Algorithm 
-
-// n = num tasks
-// while n != 1 and NOT failed
-//      finished = false
-//      failed = true
-//      for every unscheduled task (j) in task set        // Looping over all tasks in task set
-//          set task j to priority = n
-//          if passes schedulability test
-//              n = n -1
-//              failed = false
-//              finished = true
-//          else
-//              j priority = -1
-//          if finished
-//              break;
-//
-// if (n == 1)
-//      return schedulable
-// else
-//      return unschedulable

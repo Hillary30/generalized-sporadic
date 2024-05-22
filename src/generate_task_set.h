@@ -10,9 +10,7 @@ public:
   double utilization, t_max;
   bool thm1, thm2, thm3;
 
-  //EDF-VD
   int opp_klevel = -1;
-
 
   TaskSet() {}
 
@@ -64,7 +62,7 @@ public:
     this->lo_tasks_list = task_set_dict["lo"];
     this->hi_tasks_list = task_set_dict["hi"]; 
     this->opp_klevel = -1;
-
+    
     for (Task task : this->lo_tasks_list) {
       this->task_set[task.ID] = task;
     }
@@ -126,12 +124,12 @@ public:
 
     for(auto const&[key, task]: task_set) {
       
-      if (task.L == Level::LO) { 
+      if (task.L == Level::LO) { // Calculate the sum of C_LO / T for all tasks with level LO
         lo_utilization += task.C_LO / static_cast<double>(task.T);
       }
 
       
-      if (task.L == Level::HI) {
+      if (task.L == Level::HI) { // Calculate the sum of C_HI / T for all tasks with level HI
         hi_utilization += task.C_HI / static_cast<double>(task.T);
       }
     }
@@ -145,7 +143,7 @@ public:
     }
   }
 
-  void set_tightd_eq_deadline() {
+   void set_tightd_eq_deadline() {
     for(auto& [key, task] : task_set) {
       task.tight_D = task.D;
     }
@@ -179,9 +177,7 @@ public:
   bool get_thm2() const { return thm2; }
   bool get_thm3() const { return thm3; }
   int get_lo_count() const { return this->lo_tasks_list.size(); }
-  vector<Task> get_lo_tasks_list() const { return lo_tasks_list; }
   int get_hi_count() const { return this->hi_tasks_list.size(); }
-  vector<Task> get_hi_tasks_list() const { return hi_tasks_list; }
   map<int, Task> get_task_set() const { return task_set; }
   map<int, Task>& get_task_set_ref() { return task_set; }
 
@@ -210,23 +206,23 @@ private:
     int maxD = 0;
 
     for(auto const&[key, task]: task_set) {
-      l = lcm(l, task.T); 
+      l = lcm(l, task.T); // Calculate the LCM of all T values
 
-      if (task.D > maxD) maxD = task.D; 
+      if (task.D > maxD) maxD = task.D; // Find the maximum D value
     }
 
     return static_cast<double>(l + maxD);
   }
 
-  double U_maxTD() { 
+  double U_maxTD() {
     double maxTD = 0;
 
-    for(auto const&[key, task]: task_set) { 
+    for(auto const&[key, task]: task_set) { // Calculate the maximum T - D value
       double currentTD = static_cast<double>(task.T - task.D); 
       if (currentTD > maxTD) maxTD = currentTD; 
     }
 
-    return floor(utilization / (1 - utilization) * maxTD); 
+    return floor(utilization / (1 - utilization) * maxTD);
   }
 
   string thm_to_string(bool thm_result) {
