@@ -68,50 +68,54 @@ int find_optimal_tight_D(int T, int C_LO, int previous_tight_D, int ts) {
 }
 
 string deadline_search_algorithm(TaskSet& task_set) {
+  if (!is_eligible(task_set)) return "Not eligible for deadline-tightening";
+
+  deque<int> candidates = get_best_candidates(task_set);
+  int best_candidate = -1;
+  auto [t, ts] = get_failure_time(task_set);
+
+  while (!candidates.empty()) {
+    best_candidate = candidates.front();
+    candidates.pop_front();
+
+    int T = task_set.task_set[best_candidate].T;
+    int C_LO = task_set.task_set[best_candidate].C_LO;
+    int D = task_set.task_set[best_candidate].D;
+    int previous_tight_D = task_set.task_set[best_candidate].tight_D;
+
+    if (is_demand_at_minimum(T, C_LO, D, ts)) {
+      continue;
+    }
+
+    task_set.task_set[best_candidate].tight_D = find_optimal_tight_D(T, C_LO, previous_tight_D, ts);
+    if (task_set.task_set[best_candidate].tight_D == previous_tight_D) {
+      continue;
+    }
+
+    if (!schedulability_test_thm2_3(task_set)) {
+      task_set.task_set[best_candidate].tight_D = previous_tight_D;
+      continue;
+    }
+
+    auto [t, ts] = get_failure_time(task_set);
+    if (t == -1 && ts == -1) {
+      task_set.set_thm1(true);
+      return "Success";
+    }
+
+    candidates.push_front(best_candidate);
+  }
+
+  return "No more eligible candidates";
+}
+
+string condition_deadline_search_algorithm(TaskSet& task_set) {
   double load = sum_load(task_set, task_set.get_t_max(), 0);
   double load_LO = sum_load_LO(task_set, task_set.get_t_max(), 0);
   double load_HI = sum_load_HI(task_set, task_set.get_t_max(), 0);
 
   if(is_eligible_edf(load, load_LO, load_HI) == false) { //if not elligible for EDF, do EDS
-    if (!is_eligible(task_set)) return "Not eligible for deadline-tightening";
-
-    deque<int> candidates = get_best_candidates(task_set);
-    int best_candidate = -1;
-    auto [t, ts] = get_failure_time(task_set);
-
-    while (!candidates.empty()) {
-      best_candidate = candidates.front();
-      candidates.pop_front();
-
-      int T = task_set.task_set[best_candidate].T;
-      int C_LO = task_set.task_set[best_candidate].C_LO;
-      int D = task_set.task_set[best_candidate].D;
-      int previous_tight_D = task_set.task_set[best_candidate].tight_D;
-
-      if (is_demand_at_minimum(T, C_LO, D, ts)) {
-        continue;
-      }
-
-      task_set.task_set[best_candidate].tight_D = find_optimal_tight_D(T, C_LO, previous_tight_D, ts);
-      if (task_set.task_set[best_candidate].tight_D == previous_tight_D) {
-        continue;
-      }
-
-      if (!schedulability_test_thm2_3(task_set)) {
-        task_set.task_set[best_candidate].tight_D = previous_tight_D;
-        continue;
-      }
-
-      auto [t, ts] = get_failure_time(task_set);
-      if (t == -1 && ts == -1) {
-        task_set.set_thm1(true);
-        return "Success";
-      }
-
-      candidates.push_front(best_candidate);
-    }
-
-    return "No more eligible candidates";
+    return deadline_search_algorithm(task_set);
   }
   else if(is_eligible_edf(load, load_LO, load_HI) == true && schedulability_lemma_44(load) == true) {
     for (auto& [key, task] : task_set.get_task_set()) {
@@ -119,45 +123,6 @@ string deadline_search_algorithm(TaskSet& task_set) {
     }
     return "Success";
   }
-
-  // if (!is_eligible(task_set)) return "Not eligible for deadline-tightening";
-
-  // deque<int> candidates = get_best_candidates(task_set);
-  // int best_candidate = -1;
-  // auto [t, ts] = get_failure_time(task_set);
-
-  // while (!candidates.empty()) {
-  //   best_candidate = candidates.front();
-  //   candidates.pop_front();
-
-  //   int T = task_set.task_set[best_candidate].T;
-  //   int C_LO = task_set.task_set[best_candidate].C_LO;
-  //   int D = task_set.task_set[best_candidate].D;
-  //   int previous_tight_D = task_set.task_set[best_candidate].tight_D;
-
-  //   if (is_demand_at_minimum(T, C_LO, D, ts)) {
-  //     continue;
-  //   }
-
-  //   task_set.task_set[best_candidate].tight_D = find_optimal_tight_D(T, C_LO, previous_tight_D, ts);
-  //   if (task_set.task_set[best_candidate].tight_D == previous_tight_D) {
-  //     continue;
-  //   }
-
-  //   if (!schedulability_test_thm2_3(task_set)) {
-  //     task_set.task_set[best_candidate].tight_D = previous_tight_D;
-  //     continue;
-  //   }
-
-  //   auto [t, ts] = get_failure_time(task_set);
-  //   if (t == -1 && ts == -1) {
-  //     task_set.set_thm1(true);
-  //     return "Success";
-  //   }
-
-  //   candidates.push_front(best_candidate);
-  // }
-
   return "No more eligible candidates";
 }
 

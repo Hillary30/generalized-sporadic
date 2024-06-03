@@ -66,7 +66,6 @@ int main(int argc, char* argv[]) {
 
     if (task_set_eds.get_thm1() && task_set_eds.get_thm2() && task_set_eds.get_thm3()) {
       before_success++;
-
     }
 
     // Enhanced Deadline Search Algorithm
@@ -75,7 +74,9 @@ int main(int argc, char* argv[]) {
       after_eds_success++;
     }
     else{
-      if (deadline_search_algorithm(task_set_eds) == "Success") {
+      // if (deadline_search_algorithm(task_set_eds) == "Success") {
+      if (condition_deadline_search_algorithm(task_set_eds) == "Success") {
+      
         after_eds_success++;
       }
     } 
