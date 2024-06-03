@@ -4,7 +4,6 @@
 #include <cassert>
 
 #include "./src/search_algorithm.h"
-//#include "search_algorithm.h"
 #include "./src/amc.h"
 
 void create_csv_file(string filename) {
@@ -52,29 +51,22 @@ int main(int argc, char* argv[]) {
   vector<int> result;
   int cum_duration = 0, cum_duration2 = 0; 
   unsigned long long cum_eds_duration = 0, cum_edf_vd_duration = 0, cum_amc_duration = 0;
-  int task_set_size = 0;
-  int current_size = 0;
 
   for (int i = 0; i < count; ++i) {
     TaskSet task_set_eds = TaskSet(utilization);
     task_set_eds.set_thm1(schedulability_test_thm1_parallel(task_set_eds));
     task_set_eds.set_thm2(schedulability_test_thm2(task_set_eds));
     task_set_eds.set_thm3(schedulability_test_thm3(task_set_eds));
-    //  TaskSet task_set_naive = task_set_eds;
+
     TaskSet task_set_edf_vd = task_set_eds;
     TaskSet task_set_amc = task_set_eds;
     assert(&task_set_eds != &task_set_amc);
     assert(&task_set_eds != &task_set_edf_vd);
     assert(&task_set_edf_vd != &task_set_amc);
 
-    if(current_size < task_set_eds.task_set.size()) {
-      current_size = task_set_eds.task_set.size();
-    }
-
     if (task_set_eds.get_thm1() && task_set_eds.get_thm2() && task_set_eds.get_thm3()) {
       before_success++;
-      //after_eds_success++;
-      // after_naive_success++;
+
     }
 
     // Enhanced Deadline Search Algorithm
@@ -91,19 +83,7 @@ int main(int argc, char* argv[]) {
     auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
     cum_eds_duration += duration.count();
 
-    // Naive Algorithm
-    // start_time = chrono::high_resolution_clock::now();
-    // if (is_eligible(task_set_naive)) {
-    //   if (naive_algorithm(task_set_eds) == "Success") {
-    //     after_naive_success++;
-    //   }
-    // } 
-    // end_time = chrono::high_resolution_clock::now();
-    // duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
-    // assert(end_time >= start_time);
-    // cum_naive_duration += static_cast<unsigned long long>(duration.count());
-
-    //EDF-VD
+    // EDF-VD
     start_time = chrono::high_resolution_clock::now();
     if (edf_vd_algorithm(task_set_edf_vd) == "Success") { 
       after_edf_vd_success++;
@@ -129,15 +109,10 @@ int main(int argc, char* argv[]) {
   result.push_back(before_success);
   result.push_back(after_eds_success);
   result.push_back(cum_eds_duration);
-  // result.push_back(after_naive_success);
-  // result.push_back(cum_naive_duration);
   result.push_back(after_edf_vd_success);
   result.push_back(cum_edf_vd_duration);
   result.push_back(after_amc_success);
   result.push_back(cum_amc_duration);
-  result.push_back(task_set_size);
-  result.push_back(current_size);
-
 
   string filename = "experiment.csv";
 
